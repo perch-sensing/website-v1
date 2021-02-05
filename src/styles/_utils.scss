@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "sass:string";
+
+$_breakpoint: (
+  small: 735px,
+  medium: 1070px,
+);
+
+$_color: (
+  green: #79c79e,
+  warning: #fbdd83,
+  alert: #ee786d,
+  leadBlue: #317ca8,
+  flame: #ee6b47,
+  slate: #5a5a5a,
+  green-sky: #66d2c7,
+);
+
+$_font: (
+  title: '"Fira Sans", sans-serif',
+  body: '"Nunito Sans", sans-serif',
+);
+
+$shadow: ();
+
+@mixin viewport($size) {
+  @media screen and (max-width: map.get($_breakpoint, $size)) {
+    @content;
+  }
+}
+
+@mixin font($id) {
+  font-family: string.unquote(map.get($_font, $id));
+}
+
+@function color($id) {
+  @return map.get($_color, $id);
+}

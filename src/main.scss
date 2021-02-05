@@ -1,0 +1,65 @@
+@use "./styles/utils" as theme;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+h1,
+h2 {
+  @include theme.font(title);
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h3 {
+  @include theme.font(title);
+  color: theme.color(green);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+p,
+li {
+  @include theme.font(body);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+button {
+  @include theme.font(title);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  background-color: theme.color(flame);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 55px;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.1s;
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}

@@ -1,12 +1,18 @@
 import { Switch, Route } from "react-router-dom";
 
 import Lander from "./pages/Lander/Lander";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <Switch>
-      <Route path="*" component={Lander} />
-    </Switch>
+    <main>
+      <Navigation />
+      <Switch>
+        <Route path="*" component={Lander} />
+      </Switch>
+      <Footer />
+    </main>
   );
 }
 

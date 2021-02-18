@@ -1,0 +1,35 @@
+.Footer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+
+  hr {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    border: 0.5px solid #dedede;
+  }
+
+  .company-description {
+    .logo {
+    }
+  }
+
+  nav {
+    display: flex;
+
+    .site-links,
+    .social-media {
+      list-style: none;
+      padding: 0;
+      margin: 10px 30px;
+
+      a {
+        display: block;
+      }
+    }
+  }
+}

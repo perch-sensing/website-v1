@@ -1,6 +1,27 @@
 @use "../../../../styles/utils.scss" as theme;
+.Lander {
+  .Hero {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info display";
+    gap: 50px;
+    @include theme.viewport(medium) {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "display" "info";
+      gap: 0px;
+    }
 
-h1 {
-  color: theme.color(alert);
-  @include theme.font(body);
+    .hero-info {
+      grid-area: info;
+      align-self: center;
+    }
+
+    .hero-display {
+      grid-area: display;
+      align-self: center;
+      width: 100%;
+    }
+  }
 }

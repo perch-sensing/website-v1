@@ -1,1 +1,17 @@
 @use "../../../../styles/utils.scss" as theme;
+.Lander {
+  .Overview {
+    justify-content: space-around;
+    flex-direction: row;
+
+    .overview-display {
+      max-width: 45%;
+      object-position: top center;
+      object-fit: contain;
+    }
+
+    .overview-info {
+      margin-left: 100px;
+    }
+  }
+}

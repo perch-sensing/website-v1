@@ -1,27 +1,39 @@
 @use "../../../../styles/utils.scss" as theme;
-.Lander {
-  .Hero {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "info display";
-    gap: 50px;
-    @include theme.viewport(medium) {
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr;
-      grid-template-areas: "display" "info";
-      gap: 0px;
+
+section.Hero {
+  display: grid;
+  grid-template-rows: auto min-content;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 90px;
+  .hero-info {
+    min-width: 80%;
+    z-index: 1;
+    align-self: end;
+    justify-self: center;
+
+    @include theme.viewport(small) {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
-    .hero-info {
-      grid-area: info;
-      align-self: center;
-    }
+    .title {
+      color: theme.color(lead-blue);
 
-    .hero-display {
-      grid-area: display;
-      align-self: center;
-      width: 100%;
+      em {
+        color: theme.color(flame);
+        font-style: normal;
+      }
     }
+    p {
+      max-width: 450px;
+    }
+  }
+
+  .perch-line {
+    width: 100%;
+    object-position: left;
+    object-fit: cover;
+    min-height: 280px;
   }
 }

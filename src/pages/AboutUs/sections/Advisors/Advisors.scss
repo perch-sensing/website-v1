@@ -1,0 +1,31 @@
+.AboutUs {
+  .Advisors {
+    grid-template-rows: min-content auto;
+    min-height: initial;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h2 {
+      margin-bottom: 17px;
+    }
+    .advisor-list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .AdvisorProfile {
+      margin: 20px;
+      width: min-content;
+      text-align: center;
+      img {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

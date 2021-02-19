@@ -1,0 +1,54 @@
+@use "../../../../styles/utils.scss" as theme;
+
+.Lander {
+  .Team {
+    h2 {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: min-content;
+      margin: auto;
+
+      @include theme.viewport(small) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      .team-group {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .team-group {
+          list-style: none;
+        }
+      }
+    }
+
+    .Profile {
+      padding: 0;
+      margin: 30px;
+      background: white;
+      width: min-content;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
+      img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .info {
+        padding: 10px;
+        h3,
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

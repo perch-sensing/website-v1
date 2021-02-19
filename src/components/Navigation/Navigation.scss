@@ -1,14 +1,27 @@
 @use "../../styles/utils" as theme;
 
 .Navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr auto;
   justify-content: space-between;
-  padding: 20px 30px;
+  padding: 25px 35px;
+  background-color: rgba(255, 255, 255, 0.534);
+  backdrop-filter: blur(40px);
+  z-index: 100;
+
+  .logo {
+    height: 50px;
+    margin-left: 50px;
+    @include theme.viewport(small) {
+      height: 35px;
+      margin-left: 0px;
+    }
+  }
+
   .large-menu {
     list-style: none;
     padding: 0;
@@ -23,6 +36,7 @@
     a {
       text-decoration: none;
       @include theme.font(title);
+      color: theme.color(text);
       font-size: 16px;
       font-weight: 400;
       line-height: 19px;
@@ -60,8 +74,16 @@
     background-color: theme.color(flame);
     padding: 30px;
 
+    .close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+
     .dropdown-menu {
       list-style: none;
+      padding: 0;
+
       li {
         padding: 20px;
         a {

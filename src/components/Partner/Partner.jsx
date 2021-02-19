@@ -1,6 +1,6 @@
 import "./Partner.scss";
-
-import partnerDisplay from "../../../../assets/alerts.png";
+import partnerDisplay from "../../assets/alerts.png";
+import { Link } from "react-router-dom";
 
 export default function Partner() {
   return (
@@ -13,12 +13,15 @@ export default function Partner() {
           are currently working to stop wildfires, we would be happy to help
           your endeavors.
         </p>
-        <button>Contact Us</button>
+        <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+          <button>Contact Us</button>
+        </Link>
       </div>
       <img
         className="partner-display"
         src={partnerDisplay}
         alt="Forest alerts"
+        loading="lazy"
       />
     </section>
   );

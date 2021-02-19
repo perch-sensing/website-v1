@@ -1,0 +1,18 @@
+@use "../../styles/utils.scss" as theme;
+
+.AboutUs {
+  section {
+    display: grid;
+    width: 100%;
+    padding: 100px;
+    min-height: 100vh;
+
+    @include theme.viewport(medium) {
+      padding: 50px;
+    }
+
+    @include theme.viewport(small) {
+      padding: 20px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@use "../../styles/utils.scss" as theme;
+
+.ContactPage {
+  padding: 0 30px;
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 50px;
+    align-items: center;
+    @include theme.viewport(medium) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-bottom: 100px;
+
+      .contact-info {
+        align-self: flex-end;
+      }
+    }
+
+    @include theme.viewport(small) {
+      padding: 0;
+    }
+    .contact-info {
+      .contact-methods {
+        list-style: none;
+        padding: 0;
+        li {
+          margin: 10px 0;
+        }
+        .icon {
+          margin-right: 20px;
+          vertical-align: middle;
+        }
+        a {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    form {
+      text-align: center;
+    }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+      gap: 10px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0px 15px rgba(0, 0, 0, 0.11);
+
+      @include theme.viewport(small) {
+        display: block;
+      }
+
+      .TextField {
+        display: block;
+        margin: 5px 0;
+      }
+
+      textarea {
+        @include theme.font(body);
+        font-size: 17px;
+        display: block;
+        width: 100%;
+        padding: 20px 20px;
+        border: none;
+        border-radius: 11px;
+        background: #f3f5fa;
+        grid-column: 1 / span 2;
+        margin-top: 30px;
+        resize: vertical;
+
+        &:not(:placeholder-shown):not(:focus):invalid {
+          background-color: theme.color(alert);
+          color: white;
+        }
+      }
+    }
+    input[type="submit"] {
+      margin-top: 20px;
+    }
+  }
+}

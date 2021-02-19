@@ -1,5 +1,7 @@
 import "./Advantages.scss";
 
+import advantagesDisplay from "../../../../assets/wide-mountains.svg";
+
 const advantages = [
   {
     title: "Precision",
@@ -27,6 +29,11 @@ export default function Advantages() {
           <AdvantageCard key={advantage.title} {...advantage} />
         ))}
       </ul>
+      <img
+        className="advantages-display"
+        src={advantagesDisplay}
+        alt="mountains"
+      />
     </section>
   );
 }

@@ -8,7 +8,8 @@ export default function useMediaQuery(...constraints) {
   const query = matchMedia(
     "screen and " + constraints.map((c) => `(${c})`).join(" and ")
   );
-  const [matches, setMatches] = useState(matchMedia(query).matches);
+  const [matches, setMatches] = useState(query.matches);
+
   useEffect(() => {
     function queryCallback(e) {
       setMatches(query.matches);

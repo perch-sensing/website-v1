@@ -1,0 +1,33 @@
+.AboutUs {
+  .Team {
+    h2 {
+      margin-bottom: 17px;
+    }
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .MemberCard {
+    padding: 0;
+    margin: 30px;
+    background: white;
+    width: min-content;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .info {
+      padding: 10px;
+      h3,
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

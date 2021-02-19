@@ -1,17 +1,36 @@
 @use "../../../../styles/utils.scss" as theme;
-.Lander {
-  .Overview {
-    justify-content: space-around;
-    flex-direction: row;
 
-    .overview-display {
-      max-width: 45%;
-      object-position: top center;
-      object-fit: contain;
+section.Overview {
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+
+  @include theme.viewport(medium) {
+    display: block;
+  }
+
+  .overview-display {
+    max-width: 45%;
+    object-position: top center;
+    object-fit: contain;
+
+    @include theme.viewport(medium) {
+      max-width: 600px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .overview-info {
+    margin-left: 100px;
+    @include theme.viewport(medium) {
+      margin-left: 0;
     }
 
-    .overview-info {
-      margin-left: 100px;
+    .use-case-title {
+      margin-bottom: 0;
+    }
+    ul {
+      margin-top: 8px;
     }
   }
 }

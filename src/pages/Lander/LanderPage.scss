@@ -1,0 +1,12 @@
+@use "../../styles/utils.scss" as theme;
+
+.Lander {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 25px;
+  }
+}

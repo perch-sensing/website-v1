@@ -1,0 +1,29 @@
+@use "../../styles/utils.scss" as theme;
+
+section.Partner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+
+  @include theme.viewport(medium) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    .partner-display {
+      grid-row: 1;
+      align-self: flex-end;
+      max-width: 100%;
+    }
+
+    .partner-info {
+      grid-row: 2;
+      max-width: 500px;
+      align-self: flex-start;
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}

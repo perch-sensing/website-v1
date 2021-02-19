@@ -1,0 +1,27 @@
+@use "../../../../styles/utils.scss" as theme;
+.AboutUs {
+  .TeamStory {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+
+    @include theme.viewport(medium) {
+      grid-template-columns: 1fr;
+      padding-top: 120px;
+
+      .story-graphic {
+        grid-row: 1;
+      }
+
+      .story-info {
+        grid-row: 2;
+      }
+    }
+
+    .story-graphic {
+      object-fit: contain;
+      max-height: 50vh;
+      width: 100%;
+    }
+  }
+}

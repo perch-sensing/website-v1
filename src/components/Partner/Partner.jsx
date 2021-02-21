@@ -22,7 +22,6 @@ export default function Partner() {
         src={partnerDisplay}
         alt="Forest alerts"
         loading="lazy"
-        role="img"
       />
     </section>
   );

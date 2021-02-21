@@ -24,7 +24,6 @@ export default function Hero() {
         className="perch-line"
         src={heroDisplay}
         alt="Perch Sensor on a power line"
-        role="img"
       />
     </section>
   );

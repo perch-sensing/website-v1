@@ -17,7 +17,6 @@ export default function Overview() {
         src={overviewDisplay}
         alt="Perch Sensor alert"
         loading="lazy"
-        role="img"
       />
       <div className="overview-info">
         <h2>A Bird's Eye View</h2>

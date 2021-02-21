@@ -5,10 +5,10 @@ import TextField from "../../components/TextField/TextField";
 const contactMethods = [
   {
     Icon: Mail,
-    text: "hello@perchsensing.com",
-    href: "mailto:hello@perchsensing.com",
+    text: "emilerickson@perchsensing.com",
+    href: "mailto:emilerickson@perchsensing.com",
   },
-  { Icon: Phone, text: "+1 (805) 344 3234", href: "tel:+18313326725" },
+  { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
 ];
 
 export default function ContactPage() {

@@ -10,7 +10,7 @@ import CJProfile from "../../../../assets/profiles/CJ.jpg";
 import jessProfile from "../../../../assets/profiles/jess.jpg";
 
 const profiles = [
-  { name: "Emil Erikson", image: emilProfile, role: "CEO" },
+  { name: "Emil Erickson", image: emilProfile, role: "CEO" },
   { name: "Richa Gadgil", image: richaProfile, role: "CDO" },
   { name: "CJ Gray", image: CJProfile, role: "Mechanical Engineer" },
   { name: "Caitlin Maltbie", image: caitlinProfile, role: "CMO" },

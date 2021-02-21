@@ -12,6 +12,6 @@ The marketing homepage for Perch Sensing, presenting the company mission to the 
 ## Resources
 
 - Build system: [Create React App](https://github.com/facebook/create-react-app)
-- Styling: [Sass]()
-- Icon Library: [Feather Icons]()
-- Animations: [React Spring]()
+- Styling: [Sass](https://sass-lang.com/guide)
+- Icon Library: [Feather Icons](https://feathericons.com/)
+- Animations: [React Spring](https://www.react-spring.io/docs/hooks/basics)

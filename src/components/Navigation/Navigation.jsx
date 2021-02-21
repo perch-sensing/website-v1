@@ -19,7 +19,7 @@ function LargeNav() {
   const { pathname } = useLocation();
   return (
     <nav className="Navigation">
-      <img className="logo" src={logo} alt="Perch Logo" />
+      <img className="logo" src={logo} alt="Perch Logo" role="img" />
       <ul className="large-menu">
         {routes.map((path) => (
           <li key={path.title}>
@@ -61,7 +61,7 @@ function SmallNav() {
   }
   return (
     <nav className="Navigation">
-      <img className="logo" src={logoIcon} alt="Perch Logo" />
+      <img className="logo" src={logoIcon} alt="Perch Logo" role="img" />
       <button className="menu-icon" onClick={toggleMenu}>
         <Menu />
       </button>

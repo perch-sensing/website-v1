@@ -24,7 +24,7 @@ export default function HowItWorks() {
       <ul className="step-list">
         {steps.map(([icon, text], i) => (
           <li key={i} className="step">
-            <img src={icon} alt={"step " + i + 1} loading="lazy" />
+            <img src={icon} alt={"step " + (i + 1)} loading="lazy" />
             <p>{text}</p>
           </li>
         ))}

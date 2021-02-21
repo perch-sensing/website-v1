@@ -36,7 +36,7 @@ export default function Team() {
 function MemberCard({ name, image, role }) {
   return (
     <div className="MemberCard">
-      <img src={image} alt="Profile" />
+      <img src={image} alt={"Profile of " + name} />
       <div className="info">
         <h3>{name}</h3>
         <p>{role}</p>

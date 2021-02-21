@@ -10,7 +10,10 @@ export default function TextField(props) {
   }
   return (
     <label className="TextField">
-      <p style={{ transform: `translateY(${labelShown ? 0 : 30}px)` }}>
+      <p
+        style={{ transform: `translateY(${labelShown ? 0 : 30}px)` }}
+        aria-hidden
+      >
         {props.placeholder}
       </p>
       <input type="text" {...props} onChange={onChange} />

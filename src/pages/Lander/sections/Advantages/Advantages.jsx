@@ -32,7 +32,8 @@ export default function Advantages() {
       <img
         className="advantages-display"
         src={advantagesDisplay}
-        alt="mountains"
+        alt="mountain transmission lines"
+        role="img"
       />
     </section>
   );

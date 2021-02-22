@@ -1,6 +1,7 @@
 @use "../../../../styles/utils.scss" as theme;
 .AboutUs {
   .TeamStory {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;

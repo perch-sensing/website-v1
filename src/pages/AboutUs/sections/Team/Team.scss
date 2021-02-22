@@ -1,3 +1,5 @@
+@use "../../../../styles/utils.scss" as theme;
+
 .AboutUs {
   .Team {
     h2 {
@@ -15,6 +17,19 @@
     background: white;
     width: min-content;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
+    transform-origin: top;
+    transition: box-shadow 0.7s, transform 0.7s;
+
+    @include theme.viewport(small) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.212);
+      transform: scale(1.04);
+    }
+
     img {
       width: 180px;
       height: 180px;

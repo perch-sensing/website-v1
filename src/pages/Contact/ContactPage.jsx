@@ -1,6 +1,7 @@
 import "./ContactPage.scss";
 import { Mail, Phone } from "react-feather";
 import TextField from "../../components/TextField/TextField";
+import { useRef, useState } from "react";
 
 const contactMethods = [
   {
@@ -12,10 +13,38 @@ const contactMethods = [
 ];
 
 export default function ContactPage() {
-  function sendMessage(e) {
+  const cardRef = useRef(null);
+
+  function animateSend(e) {
     e.preventDefault();
-    new FormData(e.target);
+    if (cardRef.current?.classList.contains("send")) return;
+    console.log("send");
+    const payload = new FormData(e.target);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "multipart/form-data" },
+      body: payload,
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    setTimeout(() => {
+      for (let input of e.target) {
+        if (input.type !== "submit") input.value = "";
+      }
+    }, 1000);
+
     // Send off the form data
+
+    cardRef.current?.classList.add("send");
+
+    cardRef.current?.addEventListener(
+      "animationend",
+      () => {
+        cardRef.current?.classList.remove("send");
+      },
+      { once: true }
+    );
   }
   return (
     <article className="ContactPage">
@@ -36,8 +65,10 @@ export default function ContactPage() {
             })}
           </ul>
         </div>
-        <form onSubmit={sendMessage}>
-          <div className="contact-card">
+        <form onSubmit={animateSend}>
+          <div className="contact-card" ref={cardRef}>
+            {/* Hidden input for Netlify Forms */}
+            <input type="hidden" name="form-name" value="contact" />
             <TextField
               name="name"
               placeholder="Name"

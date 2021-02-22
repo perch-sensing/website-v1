@@ -42,6 +42,8 @@
       text-align: center;
     }
     .contact-card {
+      position: relative;
+      z-index: 40;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto 1fr;
@@ -50,8 +52,43 @@
       border-radius: 20px;
       box-shadow: 0 0px 15px rgba(0, 0, 0, 0.11);
 
+      &.send {
+        animation: send 2s ease-in-out;
+      }
+
       @include theme.viewport(small) {
         display: block;
+      }
+
+      @keyframes send {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        7% {
+          transform: translateY(0) scale(0.8);
+          opacity: 1;
+        }
+        40% {
+          transform: translateY(-100vh) scale(0.8);
+          opacity: 1;
+        }
+        41% {
+          transform: translateY(-100vh) scale(0.8);
+          opacity: 0;
+        }
+        60% {
+          transform: translateY(100vh) scale(1.1);
+          opacity: 0;
+        }
+        93% {
+          transform: translateY(0) scale(1.1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
       }
 
       .TextField {

@@ -12,49 +12,39 @@ const contactMethods = [
   { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
 ];
 
-function encode(formData) {
-  let data = [];
-  for (let [key, val] of formData) {
-    data.push(encodeURIComponent(key) + "=" + encodeURIComponent(val));
-  }
-  return data.join("&");
-}
-
 export default function ContactPage() {
   const cardRef = useRef(null);
 
   function animateSend(e) {
     e.preventDefault();
+    // Don't double send form data
     if (cardRef.current?.classList.contains("send")) return;
-    console.log("send");
-    const payload = new FormData(e.target);
 
+    // Send off form data
+    const body = encode(new FormData(e.target));
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(payload),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+      body,
+    }).catch(console.log);
 
+    // Delete form values when card is out of sight
     setTimeout(() => {
       for (let input of e.target) {
         if (input.type !== "submit") input.value = "";
       }
     }, 1000);
-
-    // Send off the form data
-
+    // Start animation
     cardRef.current?.classList.add("send");
 
+    // Remove animation class on completion
     cardRef.current?.addEventListener(
       "animationend",
-      () => {
-        cardRef.current?.classList.remove("send");
-      },
+      () => cardRef.current?.classList.remove("send"),
       { once: true }
     );
   }
+
   return (
     <article className="ContactPage">
       <section className="contact">
@@ -105,4 +95,16 @@ export default function ContactPage() {
       </section>
     </article>
   );
+}
+
+/**
+ * Encodes form data as url.
+ * @param {FormData} formData
+ */
+function encode(formData) {
+  let data = [];
+  for (let [key, val] of formData) {
+    data.push(encodeURIComponent(key) + "=" + encodeURIComponent(val));
+  }
+  return data.join("&");
 }

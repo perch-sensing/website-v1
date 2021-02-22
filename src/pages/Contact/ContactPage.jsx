@@ -5,8 +5,8 @@ import TextField from "../../components/TextField/TextField";
 const contactMethods = [
   {
     Icon: Mail,
-    text: "emilerickson@perchsensing.com",
-    href: "mailto:emilerickson@perchsensing.com",
+    text: "hello@web.perchsensing.com",
+    href: "mailto:hello@web.perchsensing.com",
   },
   { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
 ];

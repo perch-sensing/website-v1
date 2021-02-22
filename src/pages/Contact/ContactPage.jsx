@@ -1,7 +1,7 @@
 import "./ContactPage.scss";
 import { Mail, Phone } from "react-feather";
 import TextField from "../../components/TextField/TextField";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const contactMethods = [
   {

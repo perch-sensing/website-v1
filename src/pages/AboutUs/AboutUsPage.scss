@@ -13,5 +13,13 @@
     @include theme.viewport(small) {
       padding: 20px;
     }
+
+    @include theme.viewport(small) {
+      h2 {
+        text-align: center;
+      }
+    }
   }
+
+  
 }

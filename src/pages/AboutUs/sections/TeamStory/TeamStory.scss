@@ -5,24 +5,31 @@
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    justify-items: center;
 
     @include theme.viewport(medium) {
       grid-template-columns: 1fr;
-      padding-top: 120px;
+      gap: 0;
+    }
 
-      .story-graphic {
-        grid-row: 1;
-      }
-
-      .story-info {
+    .story-info {
+      justify-self: flex-end;
+      @include theme.viewport(medium) {
         grid-row: 2;
+        justify-self: center;
       }
     }
 
     .story-graphic {
       object-fit: contain;
-      max-height: 50vh;
+      height: 50vh;
+      max-height: 400px;
       width: 100%;
+      object-position: left;
+      @include theme.viewport(medium) {
+        object-position: center;
+        grid-row: 1;
+      }
     }
   }
 }

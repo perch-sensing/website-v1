@@ -17,6 +17,12 @@ main {
   background: white;
 }
 
+article {
+  margin-top: 150px;
+  @include theme.viewport(small) {
+    margin-top: 90px;
+  }
+}
 section {
   width: 100%;
   padding: 100px;

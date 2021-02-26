@@ -2,9 +2,14 @@
 
 .ContactPage {
   padding: 0 30px;
-  
-  section {
+
+  @include theme.viewport(small) {
+    padding: 0;
+  }
+
+  .contact {
     display: grid;
+    padding-top: 170px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 50px;
@@ -17,19 +22,25 @@
     }
 
     @include theme.viewport(small) {
-      padding: 0;
+      padding: 0 5px;
+      padding-top: 120px;
     }
     .contact-info {
+      align-self: flex-start;
       justify-self: flex-end;
+      max-width: 460px;
       @include theme.viewport(medium) {
-        justify-self: center;
+        justify-self: flex-start;
+      }
+
+      @include theme.viewport(small) {
+        padding: 0 30px;
       }
 
       .contact-methods {
         list-style: none;
         padding: 0;
 
-        
         li {
           margin: 10px 0;
         }
@@ -45,7 +56,7 @@
 
     form {
       text-align: center;
-
+      width: 100%;
       justify-self: flex-start;
 
       @include theme.viewport(medium) {
@@ -119,6 +130,7 @@
         grid-column: 1 / span 2;
         margin-top: 30px;
         resize: vertical;
+        max-height: 400px;
 
         &:not(:placeholder-shown):not(:focus):invalid {
           background-color: theme.color(alert);

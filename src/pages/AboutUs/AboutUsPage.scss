@@ -4,7 +4,7 @@
   section {
     width: 100%;
     padding: 100px;
-    min-height: 100vh;
+    // min-height: 100vh;
 
     @include theme.viewport(medium) {
       padding: 50px;
@@ -13,5 +13,13 @@
     @include theme.viewport(small) {
       padding: 20px;
     }
+
+    @include theme.viewport(small) {
+      h2 {
+        text-align: center;
+      }
+    }
   }
+
+  
 }

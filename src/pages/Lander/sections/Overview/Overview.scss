@@ -1,7 +1,7 @@
 @use "../../../../styles/utils.scss" as theme;
 
 section.Overview {
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
 
@@ -11,6 +11,7 @@ section.Overview {
 
   .overview-display {
     max-width: 45%;
+    max-height: 440px;
     object-position: top center;
     object-fit: contain;
 

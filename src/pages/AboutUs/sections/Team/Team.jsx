@@ -1,5 +1,7 @@
 import "./Team.scss";
 
+import Advisors from "../Advisors/Advisors";
+
 import richaProfile from "../../../../assets/profiles/richa.png";
 import caitlinProfile from "../../../../assets/profiles/caitlin.png";
 import brookeProfile from "../../../../assets/profiles/brooke.png";
@@ -37,6 +39,7 @@ export default function Team() {
           <MemberCard {...profile} key={profile.name} />
         ))}
       </div>
+      <Advisors />
     </section>
   );
 }

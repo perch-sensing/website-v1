@@ -19,14 +19,14 @@ const advisors = [
 
 export default function Advisors() {
   return (
-    <section className="Advisors">
+    <div className="Advisors">
       <h2>Advisors</h2>
       <ul className="advisor-list">
         {advisors.map((advisor) => (
           <AdvisorProfile {...advisor} key={advisor.name} />
         ))}
       </ul>
-    </section>
+    </div>
   );
 }
 

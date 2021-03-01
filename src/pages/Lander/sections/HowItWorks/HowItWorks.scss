@@ -21,6 +21,10 @@
     h2 {
       text-align: center;
       margin-bottom: 55px;
+
+      @include theme.viewport(medium) {
+        margin-bottom: 30px;
+      }
     }
     .step-list {
       display: flex;
@@ -47,8 +51,8 @@
           margin-right: $img-margin + $tag-offset;
 
           @include theme.viewport(small) {
-            width: 100px;
-            height: 100px;
+            width: 125px;
+            height: 125px;
           }
         }
         p {

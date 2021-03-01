@@ -1,0 +1,64 @@
+.ScrollIndicator {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 60px;
+  pointer-events: none;
+
+  .scroll-veil {
+    transition: opacity 0.5s;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .time-veil {
+    opacity: 0;
+    animation: fade-in 0.7s ease-out 3s forwards;
+  }
+
+  svg {
+    color: red;
+    display: block;
+    animation: move 3s ease-out infinite;
+    position: absolute;
+
+    &:first-child {
+      animation: move 3s ease-out infinite 1s;
+    }
+
+    &:nth-child(3) {
+      animation: move 3s ease-out infinite 2s;
+    }
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -28,7 +28,6 @@
     .contact-info {
       align-self: flex-start;
       justify-self: flex-end;
-      max-width: 460px;
       @include theme.viewport(medium) {
         justify-self: flex-start;
       }
@@ -140,6 +139,7 @@
     }
     input[type="submit"] {
       margin-top: 20px;
+      background-color: theme.color(flame);
     }
   }
 }

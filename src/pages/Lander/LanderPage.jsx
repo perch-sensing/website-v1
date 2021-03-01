@@ -5,6 +5,7 @@ import Overview from "./sections/Overview/Overview";
 import HowItWorks from "./sections/HowItWorks/HowItWorks";
 import Advantages from "./sections/Advantages/Advantages";
 import Partner from "../../components/Partner/Partner";
+import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 
 export default function LanderPage() {
   return (
@@ -13,8 +14,8 @@ export default function LanderPage() {
       <Overview />
       <HowItWorks />
       <Advantages />
-      {/* <Team /> */}
       <Partner />
+      <ScrollIndicator determineVisibility={(position) => position < 50} />
     </article>
   );
 }

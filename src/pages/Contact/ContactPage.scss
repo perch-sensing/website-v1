@@ -57,9 +57,12 @@
       text-align: center;
       width: 100%;
       justify-self: flex-start;
+      align-self: flex-start;
+      max-width: 800px;
 
       @include theme.viewport(medium) {
         justify-self: center;
+        max-width: initial;
       }
     }
     .contact-card {

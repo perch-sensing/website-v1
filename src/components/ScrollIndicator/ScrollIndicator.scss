@@ -1,3 +1,5 @@
+@use "../../styles/utils.scss" as theme;
+
 .ScrollIndicator {
   position: fixed;
   bottom: 50px;
@@ -21,7 +23,7 @@
   }
 
   svg {
-    color: red;
+    color: theme.color(flame);
     display: block;
     animation: move 3s ease-out infinite;
     position: absolute;

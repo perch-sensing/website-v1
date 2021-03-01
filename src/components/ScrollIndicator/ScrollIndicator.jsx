@@ -15,7 +15,7 @@ export default function ScrollIndicator({ determineVisibility }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () =>
       window.removeEventListener("scroll", onScroll, { passive: true });
-  }, []);
+  }, [determineVisibility]);
 
   return (
     <div className="ScrollIndicator">

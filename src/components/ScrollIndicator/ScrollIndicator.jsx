@@ -12,7 +12,6 @@ import { ChevronDown } from "react-feather";
 /**
  *
  * @param {{determineVisibility: visibilityCallback, showOnce: boolean}} param0
- * @returns
  */
 export default function ScrollIndicator({
   determineVisibility,

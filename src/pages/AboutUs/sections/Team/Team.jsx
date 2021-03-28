@@ -13,7 +13,7 @@ import CJProfile from "../../../../assets/profiles/CJ.jpg";
 import jeniProfile from "../../../../assets/profiles/jeni.jpeg";
 import janineProfile from "../../../../assets/profiles/janine.jpeg";
 import nickProfile from "../../../../assets/profiles/nick.jpeg";
-import jessProfile from "../../../../assets/profiles/jess.jpg";
+import arthurProfile from "../../../../assets/profiles/arthur.jpeg";
 
 const profiles = [
   { name: "Emil Erickson", image: emilProfile, role: "CEO" },
@@ -27,7 +27,7 @@ const profiles = [
   { name: "Nick Marta", image: nickProfile, role: "Electrical Engineer" },
   { name: "Reed Slobodin", image: reedProfile, role: "Electrical Engineer" },
   { name: "CJ Gray", image: CJProfile, role: "Mechanical Engineer" },
-  { name: "Jess Waidhofer", image: jessProfile, role: "Lead Designer" },
+  { name: "Arthur Waidhofer", image: arthurProfile, role: "Lead Designer" },
 ];
 
 export default function Team() {

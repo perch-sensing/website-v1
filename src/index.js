@@ -2,12 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./main.scss";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
+
+const hist = createBrowserHistory();
+
+ReactGA.initialize("G-403W3HLWEL");
+ReactGA.pageview(window.location.pathname);
+hist.listen((location) => {
+  ReactGA.pageview(location.pathname);
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router history={hist}>
       <App />
     </Router>
   </React.StrictMode>,

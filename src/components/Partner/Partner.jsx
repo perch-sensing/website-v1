@@ -1,5 +1,5 @@
 import "./Partner.scss";
-import partnerDisplay from "../../assets/alerts.png";
+import partnerDisplay from "../../assets/partner-with-us.svg";
 import { Link } from "react-router-dom";
 
 export default function Partner() {

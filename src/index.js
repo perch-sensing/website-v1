@@ -9,7 +9,7 @@ import { createBrowserHistory } from "history";
 
 const hist = createBrowserHistory();
 
-ReactGA.initialize("UA-26897832-6");
+ReactGA.initialize("UA-194583402-2");
 ReactGA.pageview(window.location.pathname);
 hist.listen((location) => {
   ReactGA.set({ page: location.pathname });

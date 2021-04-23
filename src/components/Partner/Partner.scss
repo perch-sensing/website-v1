@@ -8,6 +8,10 @@ section.Partner {
   .partner-info {
     justify-self: flex-end;
   }
+  .partner-display {
+    width: 100%;
+    height: 500px;
+  }
 
   @include theme.viewport(medium) {
     grid-template-columns: 1fr;
@@ -18,6 +22,7 @@ section.Partner {
       grid-row: 1;
       align-self: flex-end;
       max-width: 100%;
+      max-height: 390px;
     }
 
     .partner-info {

@@ -13,6 +13,8 @@ const contactMethods = [
   { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
 ];
 
+export const pageTitle = "Perch Sensing Contact Page"
+
 export default function ContactPage() {
   const cardRef = useRef(null);
 
@@ -50,7 +52,7 @@ export default function ContactPage() {
     <article className="ContactPage">
       <section className="contact">
         <MetaTags>
-          <title>Contact Page</title>
+          <title>{pageTitle}</title>
           <meta name="description" content="This contact page provides the email and phone number for Perch Sensing in addition to providing a form 
           to give users the opportunity to send messages through the website." />
         </MetaTags>

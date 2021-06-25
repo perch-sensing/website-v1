@@ -5,13 +5,15 @@ import Partner from "../../components/Partner/Partner";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 import MetaTags from 'react-meta-tags';
 
+export const pageTitle = "Perch Sensing About Us Page"
+
 export default function AboutUsPage() {
   return (
     <article className="AboutUs">
       <MetaTags>
-        <title>Perch Sensing About Us Page</title>
-        <meta name="description" content="This page contains more personal information about the comapany, including our history and mission, images and names
-        of our team members, and another Partner with us (contact us) section." />
+        <title>{pageTitle}</title>
+        <meta name="description" content="Perch Sensing started out as a research project at Cal Poly San Luis Obispo, and has 
+        since developed into a mission driven company aiming to save the lives through an innovative hardware platform." />
       </MetaTags>
       <TeamStory />
       <Team />

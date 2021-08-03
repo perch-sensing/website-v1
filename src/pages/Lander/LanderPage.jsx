@@ -6,10 +6,17 @@ import HowItWorks from "./sections/HowItWorks/HowItWorks";
 import Advantages from "./sections/Advantages/Advantages";
 import Partner from "../../components/Partner/Partner";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
+import MetaTags from 'react-meta-tags';
+
+export const pageTitle = "Home | Perch Sensing"
 
 export default function LanderPage() {
   return (
     <article className="Lander">
+      <MetaTags>
+        <title>{pageTitle}</title>
+        <meta name="description" content="Predict. Prevent. Protect. We create tools that anticipate and stop wildfires." />
+      </MetaTags>
       <Hero />
       <Overview />
       <HowItWorks />

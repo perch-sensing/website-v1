@@ -29,7 +29,7 @@ export default function Footer() {
             <h3>Resources</h3>
             {routes.map(({ title, to }) => (
               <li key={title}>
-                <Link to={to} key={title} onClick={() => window.scrollTo(0, 0)}>
+                <Link className="resources" to={to} key={title} onClick={() => window.scrollTo(0, 0)}>
                   {title}
                 </Link>
               </li>

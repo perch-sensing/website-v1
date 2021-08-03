@@ -2,6 +2,7 @@ import "./ContactPage.scss";
 import { Mail, Phone } from "react-feather";
 import TextField from "../../components/TextField/TextField";
 import { useRef } from "react";
+import MetaTags from 'react-meta-tags';
 
 const contactMethods = [
   {
@@ -11,6 +12,8 @@ const contactMethods = [
   },
   { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
 ];
+
+export const pageTitle = "Contact Us | Perch Sensing"
 
 export default function ContactPage() {
   const cardRef = useRef(null);
@@ -48,6 +51,10 @@ export default function ContactPage() {
   return (
     <article className="ContactPage">
       <section className="contact">
+        <MetaTags>
+          <title>{pageTitle}</title>
+          <meta name="description" content="Need to get in contact with us? Send us an email and we'll get back to you as soon as possible." />
+        </MetaTags>
         <div className="contact-info">
           <h1>Let's Get In Touch</h1>
           <p>

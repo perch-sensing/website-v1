@@ -13,7 +13,7 @@ export default function AboutUsPage() {
       <MetaTags>
         <title>{pageTitle}</title>
         <meta name="description" content="Perch Sensing started out as a research project at Cal Poly San Luis Obispo, and has 
-        since developed into a mission driven company aiming to save the lives through an innovative hardware platform." />
+        since developed into a mission driven company aiming to save lives through an innovative hardware platform." />
       </MetaTags>
       <TeamStory />
       <Team />

@@ -8,7 +8,7 @@ import Partner from "../../components/Partner/Partner";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 import MetaTags from 'react-meta-tags';
 
-export const pageTitle = "Perch Sensing Landing Page"
+export const pageTitle = "Home | Perch Sensing"
 
 export default function LanderPage() {
   return (

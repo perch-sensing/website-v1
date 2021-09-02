@@ -1,6 +1,6 @@
 import "./Team.scss";
-
-import Advisors from "../Advisors/Advisors";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import { SocialIcon } from 'react-social-icons';
 
 import richaProfile from "../../../../assets/profiles/richa.png";
 import caitlinProfile from "../../../../assets/profiles/caitlin.png";
@@ -14,12 +14,18 @@ import jeniProfile from "../../../../assets/profiles/jeni.jpeg";
 import janineProfile from "../../../../assets/profiles/janine.jpeg";
 import nickProfile from "../../../../assets/profiles/nick.jpeg";
 import arthurProfile from "../../../../assets/profiles/arthur.jpeg";
+import lewisProfile from "../../../../assets/profiles/lewis.jpeg";
+import nathanProfile from "../../../../assets/profiles/nathan.jpeg";
+import mckennaProfile from "../../../../assets/profiles/mckenna.jpeg";
+import connorProfile from "../../../../assets/profiles/connor.jpeg";
+import taufikProfile from "../../../../assets/profiles/taufik.jpg";
+import josephProfile from "../../../../assets/profiles/joseph.jpg";
+import majidProfile from "../../../../assets/profiles/majid.jpg";
+import benProfile from "../../../../assets/profiles/ben.jpeg";
 
-const profiles = [
+const inactiveTeam = [
   { name: "Emil Erickson", image: emilProfile, role: "CEO" },
   { name: "Caitlin Maltbie", image: caitlinProfile, role: "CMO" },
-  { name: "Brooke Randolph", image: brookeProfile, role: "COO" },
-  { name: "Dominic Gaiero", image: dominicProfile, role: "CTO" },
   { name: "John Waidhofer", image: johnProfile, role: "CIO" },
   { name: "Richa Gadgil", image: richaProfile, role: "CDO" },
   { name: "Jeni Kawate", image: jeniProfile, role: "Electrical Engineer" },
@@ -30,27 +36,63 @@ const profiles = [
   { name: "Arthur Waidhofer", image: arthurProfile, role: "Lead Designer" },
 ];
 
-export default function Team() {
+const activeTeam = [
+  { name: "Taufik", role: "Advisor", image: taufikProfile, linkedIn: "https://www.linkedin.com/in/taufik/"},
+  { name: "Majid Poshtan", image: majidProfile, role: "Advisor", linkedIn: "https://www.linkedin.com/in/majid-poshtan-68627348/" },
+  { name: "Joseph Callenes-Sloan", image: josephProfile, role: "Advisor", linkedIn: "https://www.linkedin.com/in/joseph-callenes-sloan-57882220/" },
+  { name: "Brooke Randolph", image: brookeProfile, role: "COO", linkedIn: "https://www.linkedin.com/in/brookerandolph/" },
+  { name: "Dominic Gaiero", image: dominicProfile, role: "CTO", linkedIn: "https://www.linkedin.com/in/dgaiero/" },
+  { name: "Connor Sanders", image: connorProfile, role: "Engineer", linkedIn: "https://www.linkedin.com/in/connorsanders/" },
+  { name: "Lewis Pietropaoli", image: lewisProfile, role: "Electrical Engineer", linkedIn: "https://www.linkedin.com/in/lewispietropaoli/" },
+  { name: "McKenna Reed", image: mckennaProfile, role: "Software Developer", linkedIn: "https://www.linkedin.com/in/mreed12/" },
+  { name: "Nathan Wang", image: nathanProfile, role: "Chief Board Designer", linkedIn: "https://www.linkedin.com/in/nathandwang/" },
+  { name: "Benjamin Trust", image: benProfile, role: "Mechanical Engineer", linkedIn: "https://www.linkedin.com/in/benjamin-a-trust/"}
+]
+
+export default function currentTeam() {
   return (
     <section className="Team">
       <h2>Meet the Team</h2>
       <div className="members">
-        {profiles.map((profile) => (
+        {activeTeam.map((profile) => (
           <MemberCard {...profile} key={profile.name} />
         ))}
       </div>
-      <Advisors />
+      <h2> </h2>
+      <h2>Thank you to our past contributors</h2>
+      <div className="pastMembers">
+        {inactiveTeam.map((profile) => (
+          <PastMemeber {...profile} key={profile.name} />
+        ))}
+      </div>
     </section>
   );
 }
 
-function MemberCard({ name, image, role }) {
+function PastMemeber({ name, image, role}) {
+  return (
+    <div className="pastMember">
+      <div className="allInfo">
+        <FiberManualRecordIcon/>
+        <div className="pastInfo"> 
+          <h3>{name}</h3>
+          <p>{role}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MemberCard({ name, image, role, linkedIn }) {
   return (
     <div className="MemberCard">
       <img src={image} alt={"Profile of " + name} />
       <div className="info">
         <h3>{name}</h3>
         <p>{role}</p>
+        <div className="SocialIcon">
+          <SocialIcon  url={linkedIn} style={{ height: 30, width: 30 }} />  
+        </div>
       </div>
     </div>
   );

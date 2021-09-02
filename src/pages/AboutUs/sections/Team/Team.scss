@@ -9,7 +9,44 @@
     .members {
       display: flex;
       flex-wrap: wrap;
+      padding-right: 100px;
+      padding-left: 100px;
+
     }
+
+    .pastMembers {
+      columns: 2 auto;
+    }
+  }
+
+  .pastMember {
+    margin-right: 17px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2%;
+    padding-right: 2%;
+  }
+
+  .allInfo {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .SocialIcon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .pastInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+      h3,
+      p {
+        margin: 0;
+      }
   }
 
   .MemberCard {

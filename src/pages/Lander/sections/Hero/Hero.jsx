@@ -13,8 +13,8 @@ export default function Hero() {
         <p className="company-desc">
           We create tools that anticipate and stop wildfires. By improving
           visibility into regions with high fire risk using mesh sensor
-          technology, Perch can warn authorities of dangerous situations before
-          fires spread.
+          technology, Perch can warn communities and authorities of dangerous 
+          situations before fires spread.
         </p>
         <button className="cta" onClick={() => window.open(ctaLink, "__blank")}>
           See how

@@ -10,7 +10,7 @@ const contactMethods = [
     text: "hello@web.perchsensing.com",
     href: "mailto:hello@web.perchsensing.com",
   },
-  { Icon: Phone, text: "+1 (805) 316-4626", href: "tel:+18053164626" },
+  { Icon: Phone, text: "+1 (925) 264-49843", href: "tel:+192526449843" },
 ];
 
 export const pageTitle = "Perch Sensing Contact Page"

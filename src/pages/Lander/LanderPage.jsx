@@ -8,15 +8,14 @@ import Partner from "../../components/Partner/Partner";
 import ScrollIndicator from "../../components/ScrollIndicator/ScrollIndicator";
 import MetaTags from 'react-meta-tags';
 
-export const pageTitle = "Perch Sensing Landing Page"
+export const pageTitle = "Home | Perch Sensing"
 
 export default function LanderPage() {
   return (
     <article className="Lander">
       <MetaTags>
         <title>{pageTitle}</title>
-        <meta name="description" content="This page is where users start on our site. Here there is navigation to other sections. 
-        Here there is an opener and How it Works, Advantages, and Partner with Us (Contact Us) sections." />
+        <meta name="description" content="Predict. Prevent. Protect. We create tools that anticipate and stop wildfires." />
       </MetaTags>
       <Hero />
       <Overview />

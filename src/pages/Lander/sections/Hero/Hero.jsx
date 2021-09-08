@@ -11,10 +11,10 @@ export default function Hero() {
           Predict. Prevent. <em>Protect.</em>
         </h1>
         <p className="company-desc">
-          We create tools that anticipate and stop wildfires. By improving
-          visibility into regions with high fire risk using mesh sensor
-          technology, Perch can warn authorities of dangerous situations before
-          fires spread.
+        We create tools that anticipate and stop wildfires. 
+        By improving visibility into regions with high fire 
+        risk using mesh sensor technology, Perch can warn 
+        authorities of dangerous situations before fires spread.
         </p>
         <button className="cta" onClick={() => window.open(ctaLink, "__blank")}>
           See how

@@ -96,9 +96,12 @@ function taufik(name) {
 function MemberCard({ name, image, role, linkedIn }) {
   return (
     <div className="MemberCard">
-      <img src={image} alt={"Profile of " + name} />
+      <a href={linkedIn} target="_blank" rel="noreferrer">
+        <img src={image} alt={"Profile of " + name} />
       <div className="info">
-        <h3>{name.split(" ")[0]}</h3>
+        <div className="name">
+          <h3>{name.split(" ")[0]}</h3>
+        </div>
         {taufik(name)}
         <h3>{name.split(" ")[1]}</h3>
         <p>{role}</p>
@@ -106,6 +109,7 @@ function MemberCard({ name, image, role, linkedIn }) {
           <SocialIcon  url={linkedIn} style={{ height: 30, width: 30 }} />  
         </div>
       </div>
+      </a>
     </div>
   );
 }

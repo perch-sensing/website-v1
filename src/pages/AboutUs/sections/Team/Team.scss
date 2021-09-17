@@ -11,7 +11,6 @@
       flex-wrap: wrap;
       padding-right: 100px;
       padding-left: 100px;
-
     }
 
     .pastMembers {
@@ -25,6 +24,7 @@
     align-items: center;
     padding-bottom: 2%;
     padding-right: 2%;
+    border-radius: 10%;
   }
 
   .allInfo {
@@ -48,6 +48,10 @@
       }
   }
 
+  img {
+    border-radius: 10% 10% 0% 0% ;
+  }
+
   .MemberCard {
     padding: 0;
     margin: 30px;
@@ -56,6 +60,7 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
     transform-origin: top;
     transition: box-shadow 0.7s, transform 0.7s;
+    border-radius: 10%;
     
 
     @include theme.viewport(small) {
@@ -64,8 +69,8 @@
     }
 
     &:hover {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.212);
-      transform: scale(1.04);
+      box-shadow: 5px 5px 5px 5px rgba(226, 195, 126, 0.986);
+      transform: scale(1.05);
     }
 
     img {

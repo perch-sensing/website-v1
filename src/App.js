@@ -12,7 +12,9 @@ function App() {
     <main>
       <Navigation />
       <Switch>
-        <Route path="/" exact component={Lander} />
+        <Route path="/" exact component={() => <Lander audience={'g'} />} />
+        <Route path="/communities" exact component={() => <Lander audience={'c'} />} />
+        <Route path="/utilities" exact component={() => <Lander audience={'u'} />} />
         <Route path="/about-us" component={AboutUs} />
         <Route path="/contact" component={Contact} />
         <Route path="*" component={PageNotFound} />

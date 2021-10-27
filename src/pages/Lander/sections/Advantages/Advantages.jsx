@@ -2,11 +2,29 @@ import "./Advantages.scss";
 
 import advantagesDisplay from "../../../../assets/wide-mountains.svg";
 
-const advantages = [
+const advantagesC = [
   {
     title: "Precision",
     text:
-      "High quality sensor units deployed in the field allow teams to react quickly to subtle environmental changes",
+      "High quality sensor units deployed in the field allow authorities to react quickly to subtle environmental changes",
+  },
+  {
+    title: "Scalability",
+    text:
+      "With automated data analysis, the Perch system continues to be manageable as the sensor fleet grows.",
+  },
+  {
+    title: "Integration",
+    text:
+      "Perch sensors work with pre-existing infrastructure, such as fencing, buildings, or trees, providing diagnostic information about the safety of assets.",
+  },
+];
+
+const advantagesU = [
+  {
+    title: "Precision",
+    text:
+      "High quality sensor units deployed on powerlines allow teams to react quickly to subtle environmental changes",
   },
   {
     title: "Scalability",
@@ -16,16 +34,44 @@ const advantages = [
   {
     title: "Integration",
     text:
+      "Perch sensors work with pre-existing infrastructure, such as powerlines, providing diagnostic information about the safety of assets.",
+  },
+];
+
+const advantagesG = [
+  {
+    title: "Precision",
+    text:
+      "High quality sensor units deployed in the field allow teams to react quickly to subtle environmental changes",
+  },
+  {
+    title: "Scalability",
+    text:
+      "With automated data analysis, the Perch system continues to be manageable as the sensor fleet grows.",
+  },
+  {
+    title: "Integration",
+    text:
       "Perch sensors work with pre-existing infrastructure, providing diagnostic information about the safety of assets.",
   },
 ];
 
-export default function Advantages() {
+function getText(type) {
+  if (type === "g") {
+     return advantagesG
+  } else if (type === "c") {
+    return advantagesC
+  } else if (type === "u") {
+    return advantagesU
+  }
+}
+
+export default function Advantages(props) {
   return (
     <section className="Advantages">
       <h2>Advantages</h2>
       <ul className="advantage-cards">
-        {advantages.map((advantage) => (
+        {getText(props.audience).map((advantage) => (
           <AdvantageCard key={advantage.title} {...advantage} />
         ))}
       </ul>

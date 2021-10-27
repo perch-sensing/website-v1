@@ -6,9 +6,8 @@ section.Hero {
   padding-left: 0;
   padding-right: 0;
   .hero-info {
-    min-width: 80%;
     z-index: 1;
-    align-self: end;
+    align-self: center;
     justify-self: center;
 
     @include theme.viewport(small) {
@@ -18,16 +17,32 @@ section.Hero {
 
     .title {
       color: theme.color(lead-blue);
+      display: flex;
+      justify-content: center;
 
       em {
         color: theme.color(flame);
         font-style: normal;
       }
     }
-    p {
-      max-width: 450px;
+
+    .company-desc {
+      text-align: center;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+    }
+
+    .editionButtons {
+      display: flex;
+      justify-content: center;
+      justify-content: space-between;
     }
   }
+
+  
 
   .perch-line {
     width: 100%;

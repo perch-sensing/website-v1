@@ -10,17 +10,17 @@ import MetaTags from 'react-meta-tags';
 
 export const pageTitle = "Home | Perch Sensing"
 
-export default function LanderPage() {
+export default function LanderPage(props) {
   return (
     <article className="Lander">
       <MetaTags>
         <title>{pageTitle}</title>
         <meta name="description" content="Predict. Prevent. Protect. We create tools that anticipate and stop wildfires." />
       </MetaTags>
-      <Hero />
-      <Overview />
-      <HowItWorks />
-      <Advantages />
+      <Hero audience={props.audience}/>
+      <Overview audience={props.audience}/>
+      <HowItWorks audience={props.audience}/>
+      <Advantages  audience={props.audience}/>
       <Partner />
       <ScrollIndicator determineVisibility={(position) => position < 50} />
     </article>

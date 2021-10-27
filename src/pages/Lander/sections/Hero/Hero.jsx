@@ -1,14 +1,49 @@
 import "./Hero.scss";
+import { useHistory } from 'react-router-dom';
 import heroDisplay from "../../../../assets/hero-display.svg";
 
 const ctaLink = "https://firemap.perchsensing.com";
 
-export default function Hero() {
+
+export default function Hero(props) {
+  let history = useHistory();
+
+  const redirectCommunities = () => {
+    history.push('/communities')
+  }
+
+  const redirectGeneral  = () => {
+    history.push('/')
+  }
+
+  const redirectUtilities  = () => {
+    history.push('/utilities')
+  }
+
+  let buttonGen = <button className="cta" onClick={redirectGeneral}> General Edition </button>;
+  let buttonCom = <button className="cta" onClick={redirectCommunities}> Community Edition </button>;
+  let buttonUtil = <button className="cta" onClick={redirectUtilities}> Utility Edition </button>;
+
+  let left;
+  let right;
+
+  if (props.audience === "g") {
+    left = buttonCom;
+    right = buttonUtil;
+  } else if (props.audience === "c") {
+    left = buttonGen;
+    right = buttonUtil;
+  } else if (props.audience === "u") {
+    left = buttonGen;
+    right = buttonCom;
+  }
+
+
   return (
     <section className="Hero">
       <div className="hero-info">
         <h1 className="title">
-          Predict. Prevent. <em>Protect.</em>
+          Predict. Prevent. <em> Protect.</em>
         </h1>
         <p className="company-desc">
         We create tools that anticipate and stop wildfires. 
@@ -16,9 +51,9 @@ export default function Hero() {
         risk using mesh sensor technology, Perch can warn 
         authorities of dangerous situations before fires spread.
         </p>
-        <button className="cta" onClick={() => window.open(ctaLink, "__blank")}>
-          See how
-        </button>
+        < div className="editionButtons">
+        {left} {right}
+        </div>
       </div>
       <img
         className="perch-line"

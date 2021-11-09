@@ -1,6 +1,8 @@
 import "./Advantages.scss";
 
-import advantagesDisplay from "../../../../assets/wide-mountains.svg";
+import advantagesGeneral from "../../../../assets/advantagesG.svg";
+import advantagesUtilities from "../../../../assets/AdvantagesU.svg";
+import advantagesCommunities from "../../../../assets/AdvantagesC.svg";
 
 const advantagesC = [
   {
@@ -66,6 +68,18 @@ function getText(type) {
   }
 }
 
+function getImage(type) {
+  if (type === "g") {
+     return advantagesGeneral
+  } else if (type === "c") {
+    return advantagesCommunities
+  } else if (type === "u") {
+    return advantagesUtilities
+  }
+}
+
+
+
 export default function Advantages(props) {
   return (
     <section className="Advantages">
@@ -77,7 +91,7 @@ export default function Advantages(props) {
       </ul>
       <img
         className="advantages-display"
-        src={advantagesDisplay}
+        src={getImage(props.audience)}
         alt="mountain transmission lines"
       />
     </section>

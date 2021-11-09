@@ -21,7 +21,7 @@ export default function LanderPage(props) {
       <Overview audience={props.audience}/>
       <HowItWorks audience={props.audience}/>
       <Advantages  audience={props.audience}/>
-      <Partner />
+      <Partner audience={props.audience}/>
       <ScrollIndicator determineVisibility={(position) => position < 50} />
     </article>
   );

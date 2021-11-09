@@ -1,6 +1,17 @@
 import "./Overview.scss";
 
-import overviewDisplay from "../../../../assets/mountain-pass.svg";
+import overviewUtilities from "../../../../assets/mountain-pass.svg";
+import overviewCommunity from "../../../../assets/BirdsEyeC.svg"
+
+function getImage(type) {
+  if (type === "g") {
+     return overviewUtilities
+  } else if (type === "c") {
+    return overviewCommunity
+  } else if (type === "u") {
+    return overviewUtilities
+  }
+}
 
 const useCasesG = [
   "Wildfire detection",
@@ -46,7 +57,7 @@ export default function Overview(props) {
     <section className="Overview">
       <img
         className="overview-display"
-        src={overviewDisplay}
+        src={getImage(props.audience)}
         alt="Perch Sensor alert"
         loading="lazy"
       />

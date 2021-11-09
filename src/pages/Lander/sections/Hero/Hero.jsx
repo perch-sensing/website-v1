@@ -1,6 +1,9 @@
 import "./Hero.scss";
 import { useHistory } from 'react-router-dom';
 import heroDisplay from "../../../../assets/hero-display.svg";
+import bannerG from "../../../../assets/bannerG.svg";
+import bannerC from "../../../../assets/bannerC.svg";
+
 
 const ctaLink = "https://firemap.perchsensing.com";
 
@@ -38,6 +41,16 @@ export default function Hero(props) {
     right = buttonCom;
   }
 
+  function getImage(type) {
+    if (type === "g") {
+       return bannerG
+    } else if (type === "c") {
+      return bannerC
+    } else if (type === "u") {
+      return heroDisplay
+    }
+  }
+
 
   return (
     <section className="Hero">
@@ -57,7 +70,7 @@ export default function Hero(props) {
       </div>
       <img
         className="perch-line"
-        src={heroDisplay}
+        src={getImage(props.audience)}
         alt="Perch Sensor on a power line"
       />
     </section>

@@ -45,9 +45,11 @@ section.Hero {
   
 
   .perch-line {
-    width: 100%;
+    width: 90%;
     object-position: left;
-    object-fit: cover;
+    
+    max-height: 90%;
     min-height: 280px;
+    margin: auto
   }
 }

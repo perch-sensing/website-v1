@@ -30,26 +30,36 @@ section.Hero {
       text-align: center;
     }
 
-    .cta {
+    .buttonText {
+      text-align: center;
+      color: #317ca8;
+      font-weight: bold;
+    }
+
+    .editionBox {
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      background-color: #bebbbb;
+      padding-top: 1%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 5%;
+      border-radius: 25px;
     }
 
     .editionButtons {
       display: flex;
-      justify-content: center;
       justify-content: space-between;
     }
   }
 
-  
-
   .perch-line {
     width: 90%;
     object-position: left;
-    
+
     max-height: 90%;
     min-height: 280px;
-    margin: auto
+    margin: auto;
   }
 }

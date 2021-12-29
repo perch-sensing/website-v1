@@ -11,6 +11,8 @@ function getImage(type) {
     return partnerCommunity
   } else if (type === "u") {
     return partnerUtilities
+  } else{
+    return partnerGeneral
   }
 }
 

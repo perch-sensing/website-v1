@@ -34,7 +34,7 @@ const useCasesU = [
   "Protect lives",
 ];
 
-const descriptionG = "Perch Sensing offers a network of fire-detecting environmental sensors installed at high risk locations. The sensor network provides a widely distributed, high resolution view into large scale infrastructure. With the aid of real-time, geographic data, our sensors identify and resolve targeted risk factors.";
+const descriptionG = "Perch Sensing offers a network of environmental sensors installed at high risk locations providing a widely distributed, high resolution view into large scale infrastructure. With the aid of real-time, geospatial data, our sensors identify and predict targeted risk factors.";
 const descriptionU = "Perch Sensing offers a network of fire-detecting environmental sensors that mount to power lines for utility services. The sensor network provides a widely distributed, high resolution view into large scale infrastructure. With the aid of expressive geospatial data, our sensors identify and resolve targeted risk factors.";
 const descriptionC = "Perch Sensing offers a network of fire-detecting environmental sensors that mount around the perimeter of communities. The sensor network provides a wide range, high resolution view into large scale infrastructure. With the aid of collected data, our sensors identify and resolve targeted risk factors, protecting communities and saving lives.";
 

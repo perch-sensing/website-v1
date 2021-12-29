@@ -8,14 +8,10 @@ const companyDescGC = `We create tools that anticipate and stop wildfires. By im
   visibility into regions with high fire risk using mesh sensor \n
   technology, Perch can warn authorities of dangerous situations before \n
   fires spread.`;
-const companyDescU = `We provide utility companies with the situational \n
-and actionable intelligence required to quickly \n
-respond to threats on or around their power \n
-distribution and transmission infrastructure \n
-using innovative sensing techniques to lower \n
-capital and operational expenditures allowing \n
-for safer, more resilient, and more affordable \n
-electric rates for ratepayers.`;
+const companyDescU = `We provide utility companies with the intelligence \n 
+  required to quickly respond to impactful threats on their infrastructure greatly \n
+  reducing unwarranted operational expenditures and promoting safe and resilient electric \n
+  power delivery for consumers.`;
 
 export default function Hero(props) {
   let history = useHistory();

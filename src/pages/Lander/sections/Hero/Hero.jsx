@@ -84,7 +84,7 @@ export default function Hero(props) {
     <section className="Hero">
       <div className="hero-info">
         <h1 className="title">
-          Predict. Prevent. <em> Protect.</em>
+          Predict. Prevent.&nbsp;<em> Protect.</em>
         </h1>
         <p className="company-desc">{getDesc(props.audience)}</p>
         <div className="editionBox">

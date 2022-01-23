@@ -1,6 +1,6 @@
 import "./Advantages.scss";
 
-import advantagesGeneral from "../../../../assets/advantagesG.svg";
+import advantagesGeneral from "../../../../assets/AdvantagesG.svg";
 import advantagesUtilities from "../../../../assets/AdvantagesU.svg";
 import advantagesCommunities from "../../../../assets/AdvantagesC.svg";
 

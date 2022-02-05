@@ -1,7 +1,7 @@
 import "./Overview.scss";
 
 import overviewUtilities from "../../../../assets/mountain-pass.svg";
-import overviewCommunity from "../../../../assets/birdsEyeC.svg";
+import overviewCommunity from "../../../../assets/birdseyec.svg";
 import overviewGeneral from "../../../../assets/genBird.svg";
 
 function getImage(type) {

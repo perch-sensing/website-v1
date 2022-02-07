@@ -20,7 +20,7 @@ import mckennaProfile from "../../../../assets/profiles/mckenna.jpeg";
 import taufikProfile from "../../../../assets/profiles/taufik.jpg";
 import josephProfile from "../../../../assets/profiles/joseph.jpg";
 import majidProfile from "../../../../assets/profiles/majid.jpg";
-import benProfile from "../../../../assets/profiles/ben.jpeg";
+import benProfile from "../../../../assets/profiles/ben.jpg";
 
 const inactiveTeam = [
   { name: "Emil Erickson", image: emilProfile, role: "Electrial Eningeer" },

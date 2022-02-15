@@ -1,8 +1,8 @@
 import "./Advantages.scss";
 
 import advantagesGeneral from "../../../../assets/advantagesG.svg";
-import advantagesUtilities from "../../../../assets/advantagesU.svg";
-import advantagesCommunities from "../../../../assets/advantagesC.svg";
+import advantagesUtilities from "../../../../assets/AdvantagesU.svg";
+import advantagesCommunities from "../../../../assets/AdvantagesC.svg";
 
 const advantagesC = [
   {

@@ -1,13 +1,13 @@
 import "./Advantages.scss";
 
 import advantagesGeneral from "../../../../assets/advantagesG.svg";
-import advantagesUtilities from "../../../../assets/AdvantagesU.svg";
-import advantagesCommunities from "../../../../assets/AdvantagesC.svg";
+import advantagesUtilities from "../../../../assets/advantagesU.svg";
+import advantagesCommunities from "../../../../assets/advantagesC.svg";
 
 const advantagesC = [
   {
     title: "Precision",
-    text: "High quality sensors deployed in the community allow for rapid and accurate prediction and feedback.",
+    text: "High quality sensors deployed in your community allow for rapid and accurate prediction and feedback.",
   },
   {
     title: "Scalability",
@@ -30,7 +30,7 @@ const advantagesU = [
   },
   {
     title: "Integration",
-    text: "Perch Sensing equipment works cohesively with existing transmission and distribution infrastructure, and requires minimal infrastructure investment.",
+    text: "Perch Sensing equipment works cohesively with existing transmission and distribution infrastructure and requires minimal infrastructure investment.",
   },
 ];
 

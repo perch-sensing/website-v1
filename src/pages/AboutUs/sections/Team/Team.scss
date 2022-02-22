@@ -6,12 +6,16 @@
     h2 {
       margin-bottom: 17px;
     }
+
+    .memberArea {
+      width: 85%;
+      //width: 60em;
+    }
     .members {
       display: flex;
       flex-wrap: wrap;
       padding-right: 100px;
       padding-left: 100px;
-
     }
 
     .pastMembers {
@@ -25,6 +29,7 @@
     align-items: center;
     padding-bottom: 2%;
     padding-right: 2%;
+    border-radius: 10%;
   }
 
   .allInfo {
@@ -41,11 +46,14 @@
   .pastInfo {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-      h3,
-      p {
-        margin: 0;
-      }
+    h3,
+    p {
+      margin: 2px;
+    }
+  }
+
+  img {
+    border-radius: 25px 25px 0 0;
   }
 
   .MemberCard {
@@ -56,7 +64,7 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
     transform-origin: top;
     transition: box-shadow 0.7s, transform 0.7s;
-    
+    border-radius: 25px;
 
     @include theme.viewport(small) {
       margin-left: auto;
@@ -64,8 +72,8 @@
     }
 
     &:hover {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.212);
-      transform: scale(1.04);
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.212);
+      transform: scale(1.05);
     }
 
     img {
@@ -78,7 +86,7 @@
     .info {
       display: flex;
       flex-direction: column;
-      
+
       padding: 10px;
       h3,
       p {

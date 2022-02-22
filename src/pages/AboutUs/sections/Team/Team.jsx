@@ -1,6 +1,6 @@
 import "./Team.scss";
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import { SocialIcon } from 'react-social-icons';
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import { SocialIcon } from "react-social-icons";
 
 import richaProfile from "../../../../assets/profiles/richa.png";
 import caitlinProfile from "../../../../assets/profiles/caitlin.png";
@@ -17,11 +17,10 @@ import arthurProfile from "../../../../assets/profiles/arthur.jpeg";
 import lewisProfile from "../../../../assets/profiles/lewis.jpeg";
 import nathanProfile from "../../../../assets/profiles/nathan.jpeg";
 import mckennaProfile from "../../../../assets/profiles/mckenna.jpeg";
-import connorProfile from "../../../../assets/profiles/connor.jpeg";
 import taufikProfile from "../../../../assets/profiles/taufik.jpg";
 import josephProfile from "../../../../assets/profiles/joseph.jpg";
 import majidProfile from "../../../../assets/profiles/majid.jpg";
-import benProfile from "../../../../assets/profiles/ben.jpeg";
+import benProfile from "../../../../assets/profiles/ben.jpg";
 
 const inactiveTeam = [
   { name: "Emil Erickson", image: emilProfile, role: "Electrial Eningeer" },
@@ -37,50 +36,96 @@ const inactiveTeam = [
 ];
 
 const activeTeam = [
-  { name: "Dominic Gaiero", image: dominicProfile, role: "Engineering Lead", linkedIn: "https://www.linkedin.com/in/dgaiero/" },
-  { name: "Lewis Pietropaoli", image: lewisProfile, role: "Electrical Engineer", linkedIn: "https://www.linkedin.com/in/lewispietropaoli/" },
-  { name: "McKenna Reed", image: mckennaProfile, role: "Software Developer", linkedIn: "https://www.linkedin.com/in/mreed12/" },
-  { name: "Connor Sanders", image: connorProfile, role: "Software Developer", linkedIn: "https://www.linkedin.com/in/connorsanders/" },
-  { name: "Brooke Randolph", image: brookeProfile, role: "Business Lead", linkedIn: "https://www.linkedin.com/in/brookerandolph/" },
-  { name: "Nathan Wang", image: nathanProfile, role: "Electrical Engineer", linkedIn: "https://www.linkedin.com/in/nathandwang/" },
-  { name: "Benjamin Trust", image: benProfile, role: "Mechanical Engineer", linkedIn: "https://www.linkedin.com/in/benjamin-a-trust/"},
-  { name: "Majid Poshtan", image: majidProfile, role: "Advisor", linkedIn: "https://www.linkedin.com/in/majid-poshtan-68627348/" },
-  { name: "Joseph Callenes-Sloan", image: josephProfile, role: "Advisor", linkedIn: "https://www.linkedin.com/in/joseph-callenes-sloan-57882220/" },
-  { name: "Taufik", role: "Advisor", image: taufikProfile, linkedIn: "https://www.linkedin.com/in/taufik/"},
-]
+  {
+    name: "Dominic Gaiero",
+    image: dominicProfile,
+    role: "Engineering Lead",
+    linkedIn: "https://www.linkedin.com/in/dgaiero/",
+  },
+  {
+    name: "Lewis Pietropaoli",
+    image: lewisProfile,
+    role: "Electrical Engineer",
+    linkedIn: "https://www.linkedin.com/in/lewispietropaoli/",
+  },
+  {
+    name: "McKenna Reed",
+    image: mckennaProfile,
+    role: "Software Developer",
+    linkedIn: "https://www.linkedin.com/in/mreed12/",
+  },
+  {
+    name: "Brooke Randolph",
+    image: brookeProfile,
+    role: "Business Lead",
+    linkedIn: "https://www.linkedin.com/in/brookerandolph/",
+  },
+  {
+    name: "Nathan Wang",
+    image: nathanProfile,
+    role: "Electrical Engineer",
+    linkedIn: "https://www.linkedin.com/in/nathandwang/",
+  },
+  {
+    name: "Benjamin Trust",
+    image: benProfile,
+    role: "Mechanical Engineer",
+    linkedIn: "https://www.linkedin.com/in/benjamin-a-trust/",
+  },
+  {
+    name: "Majid Poshtan",
+    image: majidProfile,
+    role: "Advisor",
+    linkedIn: "https://www.linkedin.com/in/majid-poshtan-68627348/",
+  },
+  {
+    name: "Joseph Callenes-Sloan",
+    image: josephProfile,
+    role: "Advisor",
+    linkedIn: "https://www.linkedin.com/in/joseph-callenes-sloan-57882220/",
+  },
+  {
+    name: "Taufik",
+    role: "Advisor",
+    image: taufikProfile,
+    linkedIn: "https://www.linkedin.com/in/taufik/",
+  },
+];
 
 export default function currentTeam() {
   return (
     <section className="Team">
       <h2>Meet the Team</h2>
-      <div className="members">
-        {activeTeam.map((profile) => (
-          <MemberCard {...profile} key={profile.name} />
-        ))}
-      </div>
-      <h2> </h2>
-      <h2>Thank you to our past contributors</h2>
-      <div className="pastMembers">
-        {inactiveTeam.map((profile) => (
-          <PastMemeber {...profile} key={profile.name} />
-        ))}
+      <div className="memberArea">
+        <div className="members">
+          {activeTeam.map((profile) => (
+            <MemberCard {...profile} key={profile.name} />
+          ))}
+        </div>
+        <h2> </h2>
+        <h2>Thank you to our past contributors</h2>
+        <div className="pastMembers">
+          {inactiveTeam.map((profile) => (
+            <PastMemeber {...profile} key={profile.name} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-function PastMemeber({ name, image, role}) {
+function PastMemeber({ name, image, role }) {
   return (
     <div className="pastMember">
       <div className="allInfo">
-        <FiberManualRecordIcon/>
-        <div className="pastInfo"> 
+        <FiberManualRecordIcon />
+        <div className="pastInfo">
           <h3>{name}</h3>
           <p>{role}</p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function taufik(name) {
@@ -89,23 +134,27 @@ function taufik(name) {
       <div>
         <br></br>
       </div>
-    )
+    );
   }
 }
 
 function MemberCard({ name, image, role, linkedIn }) {
   return (
     <div className="MemberCard">
-      <img src={image} alt={"Profile of " + name} />
-      <div className="info">
-        <h3>{name.split(" ")[0]}</h3>
-        {taufik(name)}
-        <h3>{name.split(" ")[1]}</h3>
-        <p>{role}</p>
-        <div className="SocialIcon">
-          <SocialIcon  url={linkedIn} style={{ height: 30, width: 30 }} />  
+      <a href={linkedIn} target="_blank" rel="noreferrer">
+        <img src={image} alt={"Profile of " + name} />
+        <div className="info">
+          <div className="name">
+            <h3>{name.split(" ")[0]}</h3>
+          </div>
+          {taufik(name)}
+          <h3>{name.split(" ")[1]}</h3>
+          <p>{role}</p>
+          <div className="SocialIcon">
+            <SocialIcon url={linkedIn} style={{ height: 30, width: 30 }} />
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   );
 }

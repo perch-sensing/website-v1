@@ -96,17 +96,19 @@ export default function currentTeam() {
   return (
     <section className="Team">
       <h2>Meet the Team</h2>
-      <div className="members">
-        {activeTeam.map((profile) => (
-          <MemberCard {...profile} key={profile.name} />
-        ))}
-      </div>
-      <h2> </h2>
-      <h2>Thank you to our past contributors</h2>
-      <div className="pastMembers">
-        {inactiveTeam.map((profile) => (
-          <PastMemeber {...profile} key={profile.name} />
-        ))}
+      <div className="memberArea">
+        <div className="members">
+          {activeTeam.map((profile) => (
+            <MemberCard {...profile} key={profile.name} />
+          ))}
+        </div>
+        <h2> </h2>
+        <h2>Thank you to our past contributors</h2>
+        <div className="pastMembers">
+          {inactiveTeam.map((profile) => (
+            <PastMemeber {...profile} key={profile.name} />
+          ))}
+        </div>
       </div>
     </section>
   );

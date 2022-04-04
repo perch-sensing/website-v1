@@ -21,6 +21,9 @@ import taufikProfile from "../../../../assets/profiles/taufik.jpg";
 import josephProfile from "../../../../assets/profiles/joseph.jpg";
 import majidProfile from "../../../../assets/profiles/majid.jpg";
 import benProfile from "../../../../assets/profiles/ben.jpg";
+import cpcie from "../../../../assets/cpcieSquare.png";
+import iq from "../../../../assets/innovationQuest.jpeg";
+import vw from "../../../../assets/ventureWell.png";
 
 const inactiveTeam = [
   { name: "Emil Erickson", image: emilProfile, role: "Electrial Eningeer" },
@@ -92,9 +95,36 @@ const activeTeam = [
   },
 ];
 
+const partners = [
+  {
+    name: "VentureWell",
+    image: vw,
+    website: "https://venturewell.org/",
+  },
+  {
+    name: "Innovation Quest",
+    image: iq,
+    website: "https://cie.calpoly.edu/prepare/innovation-quest/",
+  },
+  {
+    name: "Cal Poly Accelerator Program",
+    image: cpcie,
+    website: "https://cie.calpoly.edu/launch/accelerator/",
+  },
+];
+
 export default function currentTeam() {
   return (
     <section className="Team">
+      <h2 className="sponsorHeader">Our Sponsors</h2>
+      <div className="memberArea">
+        <div className="members">
+          {partners.map((profile) => (
+            <PartnerCard {...profile} key={profile.name} />
+          ))}
+        </div>
+      </div>
+      <h2> </h2>
       <h2>Meet the Team</h2>
       <div className="memberArea">
         <div className="members">
@@ -154,6 +184,16 @@ function MemberCard({ name, image, role, linkedIn }) {
             <SocialIcon url={linkedIn} style={{ height: 30, width: 30 }} />
           </div>
         </div>
+      </a>
+    </div>
+  );
+}
+
+function PartnerCard({ name, image, website }) {
+  return (
+    <div className="PartnerCard">
+      <a href={website} target="_blank" rel="noreferrer">
+        <img src={image} alt={"Profile of " + name} />
       </a>
     </div>
   );

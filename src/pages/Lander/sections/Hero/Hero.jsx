@@ -3,6 +3,9 @@ import { useHistory } from "react-router-dom";
 import heroDisplay from "../../../../assets/hero-display.svg";
 import bannerG from "../../../../assets/bannerG.svg";
 import bannerC from "../../../../assets/bannerC.svg";
+import cpcie from "../../../../assets/cpcieSquare.png";
+import iq from "../../../../assets/innovationQuest.jpeg";
+import vw from "../../../../assets/ventureWell.png";
 
 const companyDescGC = `We create tools that anticipate and stop wildfires. By improving \n 
   visibility into regions with high fire risk using mesh sensor \n
@@ -12,6 +15,24 @@ const companyDescU = `We provide utility companies with the intelligence \n
   required to quickly respond to impactful threats on their infrastructure greatly \n
   reducing unwarranted operational expenditures and promoting safe and resilient electric \n
   power delivery for consumers.`;
+
+const partners = [
+  {
+    name: "VentureWell",
+    image: vw,
+    website: "https://venturewell.org/",
+  },
+  {
+    name: "Innovation Quest",
+    image: iq,
+    website: "https://cie.calpoly.edu/prepare/innovation-quest/",
+  },
+  {
+    name: "Cal Poly Accelerator Program",
+    image: cpcie,
+    website: "https://cie.calpoly.edu/launch/accelerator/",
+  },
+];
 
 export default function Hero(props) {
   let history = useHistory();
@@ -76,6 +97,16 @@ export default function Hero(props) {
     }
   }
 
+  function PartnerCard({ name, image, website }) {
+    return (
+      <div className="PartnerCard">
+        <a href={website} target="_blank" rel="noreferrer">
+          <img src={image} alt={"Profile of " + name} />
+        </a>
+      </div>
+    );
+  }
+
   return (
     <section className="Hero">
       <div className="hero-info">
@@ -100,6 +131,14 @@ export default function Hero(props) {
         src={getImage(props.audience)}
         alt="Perch Sensor on a power line"
       />
+      <h2 className="sponsorHeader">Thank You To Our Sponsors</h2>
+      <div className="memberArea">
+        <div className="partners">
+          {partners.map((profile) => (
+            <PartnerCard {...profile} key={profile.name} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

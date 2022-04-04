@@ -60,4 +60,56 @@ section.Hero {
     min-height: 280px;
     margin: auto;
   }
+
+  .sponsorHeader {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+  }
+
+  .partners {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 100px;
+    padding-left: 100px;
+    justify-content: center;
+  }
+
+  .PartnerCard {
+    padding: 2%;
+    margin: 30px;
+    background: white;
+    width: min-content;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
+    transform-origin: top;
+    transition: box-shadow 0.7s, transform 0.7s;
+    border-radius: 25px;
+
+    @include theme.viewport(small) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      padding: 10px;
+      h3,
+      p {
+        margin: 0%;
+      }
+    }
+  }
 }

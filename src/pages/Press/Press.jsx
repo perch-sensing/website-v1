@@ -1,19 +1,26 @@
 import "./Press.scss";
+import "react-loading-skeleton/dist/skeleton.css";
+
+import { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
-import { useState, useEffect } from "react";
 import MetaTags from "react-meta-tags";
+import Skeleton from "react-loading-skeleton";
 
 import { ReactComponent as PerchLogo } from "../../assets/perch-logo-currentColor.svg";
 
-export const pageTitle = "Home | Perch Sensing";
-
 export default function Press() {
   const { postName } = useParams();
+
+  const [isLoading, setIsLoading] = useState(true);
   const [markdownBody, setMarkdownBody] = useState("");
   const [frontmatter, setFrontmatter] = useState("");
+  const [partnerLogo, setPartnerLogo] = useState("");
   const [error404, setError404] = useState("");
+  let pageTitle = `${
+    frontmatter.title ? frontmatter.title : "Press Release"
+  } | Perch Sensing`;
   let tags = frontmatter.tags ? frontmatter.tags : "";
 
   useEffect(() => {
@@ -32,6 +39,21 @@ export default function Press() {
         console.log(err);
         setError404(true);
       });
+
+    if (frontmatter.partner_logo) {
+      import(`../../assets/press/${postName}/${frontmatter.partner_logo}`).then(
+        (res) => {
+          fetch(res.default)
+            .then((res) => res.text())
+            .then((res) => setPartnerLogo(res))
+            .then(() => setIsLoading(false));
+        }
+      );
+    } else {
+      if (markdownBody) {
+        setIsLoading(false);
+      }
+    }
   });
 
   if (error404) {
@@ -39,45 +61,126 @@ export default function Press() {
   }
   return (
     <article className="Press">
-      <section>
-        <MetaTags>
-          <title>{frontmatter.title} | Perch Sensing</title>
-          <meta name="description" content={frontmatter.description} />
-        </MetaTags>
-        <div className="post-container">
-          <div className="post-titleblock">
-            <div className="header">
-              <div className="header-logo">
-                <PerchLogo fill="white" className="logo" />
+      <MetaTags>
+        <title>{pageTitle}</title>
+        <meta name="description" content={frontmatter.description} />
+      </MetaTags>
+      {isLoading ? (
+        <SkeletonArticle />
+      ) : (
+        <section>
+          <div className="post-container">
+            <div className="post-titleblock">
+              <div className="header">
+                <div className="header-logo">
+                  {frontmatter.partner_logo ? (
+                    <div className="logo">
+                      <img
+                        src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                          partnerLogo
+                        )}`}
+                        className="partner-logo"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="logo">
+                    <PerchLogo fill="white" className="perch-logo" />
+                  </div>
+                </div>
+                <div className="header-text">
+                  <p>Press Release - {frontmatter.pub_date}</p>
+                </div>
               </div>
-              <div className="header-text">
-                <p>Press Release - {frontmatter.pub_date}</p>
+              <div className="release-title">
+                <h1>{frontmatter.title}</h1>
               </div>
             </div>
-            <div className="release-title">
-              <h1>{frontmatter.title}</h1>
+            <div className="post">
+              <ReactMarkdown children={markdownBody} className="post-md" />
+            </div>
+            <div className="below-post">
+              <div className="media">
+                <span className="media-contact">Media Contact: </span>
+                <span>
+                  <a href={`mailto:${frontmatter.contact_email}`}>
+                    {frontmatter.contact_email}
+                  </a>
+                </span>
+              </div>
+              <div className="tags">
+                {tags.split(",").map((tag) => (
+                  <span className="tag">{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="post">
-            <ReactMarkdown children={markdownBody} className="post-md" />
-          </div>
-          <div className="below-post">
-            <div className="media">
-              <span className="media-contact">Media Contact: </span>
-              <span>
-                <a href={`mailto:${frontmatter.contact_email}`}>
-                  {frontmatter.contact_email}
-                </a>
-              </span>
-            </div>
-            <div className="tags">
-              {tags.split(",").map((tag) => (
-                <span className="tag">{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
     </article>
   );
+}
+
+const SkeletonArticle = () => {
+  return (
+    <section>
+      <div className="post-container">
+        <div className="post-titleblock">
+          <div className="header">
+            <div className="header-logo">
+              <Skeleton width={150} className="logo" borderRadius={25} />
+            </div>
+            <div className="header-text">
+              <p>
+                <Skeleton width={`200px`} borderRadius={25} />
+              </p>
+            </div>
+          </div>
+          <div className="release-title">
+            <h1>
+              <Skeleton borderRadius={25} />
+            </h1>
+          </div>
+        </div>
+        <div className="post">
+          <div className="post-md">
+            {Array(5)
+              .fill()
+              .map((_, index) => (
+                <p>
+                  <Skeleton count={6} key={index} borderRadius={25} />
+                  <Skeleton
+                    count={1}
+                    width={`${getRandRange(45, 100)}%`}
+                    key={index}
+                    borderRadius={25}
+                  />
+                </p>
+              ))}
+          </div>
+        </div>
+        <div className="below-post">
+          <div className="media">
+            <Skeleton width={300} borderRadius={25} />
+          </div>
+          <div className="tags">
+            {Array(3)
+              .fill()
+              .map((_, index) => (
+                <Skeleton
+                  inline={true}
+                  containerClassName="tag"
+                  width={getRandRange(45, 100)}
+                  key={index}
+                  borderRadius={25}
+                />
+              ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+function getRandRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

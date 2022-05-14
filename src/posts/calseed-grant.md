@@ -2,6 +2,7 @@
 title: 'Perch Sensing Inc. Awarded $150,000 CalSEED Concept Award Grant'
 description: 'The CalSEED initative awarded Perch Sensing Inc. with a $150,000 grant to develop a distributed, real-time monitoring and control system to significantly improve the resiliency of the grid.'
 contact_email: media@perchsensing.com
+partner_logo: calseedLogo.svg
 author: 'Dominic Gaiero'
 pub_date: '05/16/2022'
 tags: 'grants, calseed'
@@ -14,4 +15,4 @@ Integer vel odio ut velit placerat molestie id in turpis. Donec rutrum tortor si
 
 Mauris vestibulum magna ut consectetur facilisis. Phasellus ut nisl quam. Quisque dictum, mauris ac imperdiet fringilla, nisi justo blandit dui, in molestie ex erat ut augue. Duis luctus lorem non lobortis hendrerit. Nunc leo lacus, faucibus ac tristique et, luctus ac urna. Morbi viverra quis metus eu pulvinar. Nam lectus nibh, interdum non faucibus et, venenatis laoreet ante. Suspendisse varius eros nunc, a ultrices neque aliquam interdum. Nullam at dui leo. Nulla hendrerit egestas est, at feugiat turpis bibendum quis. Quisque id leo eget est elementum sodales eget sed tortor. Suspendisse vestibulum, dui non molestie tincidunt, massa libero dignissim purus, finibus luctus leo magna eu elit.
 
-Morbi porttitor non mauris nec congue. Proin feugiat leo at posuere varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Vivamus id leo aliquet, laoreet nisl sit amet, dapibus felis. Vivamus varius non dolor ultrices dapibus. Vestibulum neque massa, tempor rhoncus gravida sed, euismod vestibulum nunc. Vestibulum iaculis dolor id libero feugiat volutpat. Proin sem odio, pulvinar nec ultrices ut, condimentum in enim. In vel pharetra lacus. 
+Morbi porttitor non mauris nec congue. Proin feugiat leo at posuere varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Vivamus id leo aliquet, laoreet nisl sit amet, dapibus felis. Vivamus varius non dolor ultrices dapibus. Vestibulum neque massa, tempor rhoncus gravida sed, euismod vestibulum nunc. Vestibulum iaculis dolor id libero feugiat volutpat. Proin sem odio, pulvinar nec ultrices ut, condimentum in enim. In vel pharetra lacus.

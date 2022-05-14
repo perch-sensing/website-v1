@@ -18,19 +18,31 @@
       color: #fff;
       padding: 24px;
 
+      .skeleton {
+        background-color: black;
+      }
+
       .header {
         display: flex;
         flex-flow: row wrap;
         flex-direction: row-reverse;
         justify-content: space-between;
+        align-items: center;
         .header-logo {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          align-items: center;
           .logo {
+            max-height: 50px;
+            @include theme.viewport(small) {
+              max-height: 35px;
+            }
+            margin: 10px;
+          }
+          .perch-logo {
             height: 50px;
             margin-left: auto;
-            @include theme.viewport(small) {
-              height: 35px;
-              margin-left: 0px;
-            }
           }
         }
       }

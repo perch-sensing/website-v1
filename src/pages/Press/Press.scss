@@ -69,14 +69,21 @@
       }
       .tags {
         margin-left: auto;
+        // margin-top: 20px;
         .tag {
           background-color: #fafafa;
           border: none;
           padding: 10px 20px;
           text-align: center;
           text-decoration: none;
-          margin: 4px;
+          margin: 6px;
           border-radius: 25px;
+        }
+        .tag:first-child {
+          margin-left: 0px;
+        }
+        .tag:last-child {
+          margin-right: 0px;
         }
       }
     }

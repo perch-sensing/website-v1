@@ -47,18 +47,18 @@ export default function Press() {
         <div className="post-container">
           <div className="post-titleblock">
             <div className="header">
-              <div className="header-text">
-                <p>Press Release - {frontmatter.pub_date}</p>
-              </div>
               <div className="header-logo">
                 <PerchLogo fill="white" className="logo" />
+              </div>
+              <div className="header-text">
+                <p>Press Release - {frontmatter.pub_date}</p>
               </div>
             </div>
             <div className="release-title">
               <h1>{frontmatter.title}</h1>
             </div>
           </div>
-          <div class="post">
+          <div className="post">
             <ReactMarkdown children={markdownBody} className="post-md" />
           </div>
           <div className="below-post">

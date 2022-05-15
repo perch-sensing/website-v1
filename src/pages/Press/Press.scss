@@ -46,9 +46,22 @@
           }
         }
       }
+
+      .partner-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 50px;
+          max-height: 50px;
+          @include theme.viewport(small) {
+            max-height: 35px;
+          }
+        }
+      }
       .release-title {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 24px;
+        margin-bottom: 24px;
         @include theme.viewport(medium) {
           margin-top: 25px;
           margin-bottom: 25px;

@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import MetaTags from "react-meta-tags";
 import Skeleton from "react-loading-skeleton";
+import rehypeRaw from "rehype-raw";
 
 import { ReactComponent as PerchLogo } from "../../assets/perch-logo-currentColor.svg";
 
@@ -21,6 +22,13 @@ export default function Press() {
   let pageTitle = `${
     frontmatter.title ? frontmatter.title : "Press Release"
   } | Perch Sensing`;
+  let ogImgURL = `https://og-image.services.perchsensing.com/${encodeURIComponent(
+    frontmatter.title
+  )}?date=${encodeURIComponent(
+    frontmatter.pub_date
+  )}&partnerLogo=${encodeURIComponent(
+    `data:image/svg+xml;base64,${btoa(partnerLogo)}`
+  )}`;
   let tags = frontmatter.tags ? frontmatter.tags : "";
 
   useEffect(() => {
@@ -64,6 +72,15 @@ export default function Press() {
       <MetaTags>
         <title>{pageTitle}</title>
         <meta name="description" content={frontmatter.description} />
+        <meta
+          property="og:url"
+          content="https://epic-albattani-285170-87e760.netlify.live/press/calseed-grant/"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:image" content={ogImgURL} />
+        <meta name="author" content={frontmatter.author}></meta>
       </MetaTags>
       {isLoading ? (
         <SkeletonArticle />
@@ -73,16 +90,6 @@ export default function Press() {
             <div className="post-titleblock">
               <div className="header">
                 <div className="header-logo">
-                  {frontmatter.partner_logo ? (
-                    <div className="logo">
-                      <img
-                        src={`data:image/svg+xml;utf8,${encodeURIComponent(
-                          partnerLogo
-                        )}`}
-                        className="partner-logo"
-                      />
-                    </div>
-                  ) : null}
                   <div className="logo">
                     <PerchLogo fill="white" className="perch-logo" />
                   </div>
@@ -94,9 +101,22 @@ export default function Press() {
               <div className="release-title">
                 <h1>{frontmatter.title}</h1>
               </div>
+              {frontmatter.partner_logo ? (
+                <div className="partner-logo">
+                  <img
+                    src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                      partnerLogo
+                    )}`}
+                  />
+                </div>
+              ) : null}
             </div>
             <div className="post">
-              <ReactMarkdown children={markdownBody} className="post-md" />
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                children={markdownBody}
+                className="post-md"
+              />
             </div>
             <div className="below-post">
               <div className="media">
@@ -109,7 +129,9 @@ export default function Press() {
               </div>
               <div className="tags">
                 {tags.split(",").map((tag) => (
-                  <span className="tag">{tag}</span>
+                  <span className="tag" key={tag}>
+                    {tag.trim()}
+                  </span>
                 ))}
               </div>
             </div>
@@ -127,7 +149,12 @@ const SkeletonArticle = () => {
         <div className="post-titleblock">
           <div className="header">
             <div className="header-logo">
-              <Skeleton width={150} className="logo" borderRadius={25} />
+              <Skeleton
+                width={150}
+                height={50}
+                className="logo"
+                borderRadius={25}
+              />
             </div>
             <div className="header-text">
               <p>
@@ -146,12 +173,11 @@ const SkeletonArticle = () => {
             {Array(5)
               .fill()
               .map((_, index) => (
-                <p>
-                  <Skeleton count={6} key={index} borderRadius={25} />
+                <p key={index}>
+                  <Skeleton count={6} borderRadius={25} />
                   <Skeleton
                     count={1}
                     width={`${getRandRange(45, 100)}%`}
-                    key={index}
                     borderRadius={25}
                   />
                 </p>

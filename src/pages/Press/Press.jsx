@@ -80,6 +80,8 @@ export default function Press() {
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={ogImgURL} />
+        <meta property="og:image:width" content="2048" />
+        <meta property="og:image:height" content="1170" />
         <meta name="author" content={frontmatter.author}></meta>
       </MetaTags>
       {isLoading ? (

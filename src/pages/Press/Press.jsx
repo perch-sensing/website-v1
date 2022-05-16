@@ -26,9 +26,12 @@ export default function Press() {
     frontmatter.title
   )}?date=${encodeURIComponent(
     frontmatter.pub_date
-  )}&partnerLogo=${encodeURIComponent(
-    `data:image/svg+xml;base64,${btoa(partnerLogo)}`
   )}`;
+  // Eventually, we'll include this, but it isn't working right now (LinkedIn is
+  // chopping off most of the logo)
+  // &partnerLogo=${encodeURIComponent(
+  //   `data:image/svg+xml;base64,${btoa(partnerLogo)}`
+  // )}
   let tags = frontmatter.tags ? frontmatter.tags : "";
 
   useEffect(() => {
@@ -80,8 +83,8 @@ export default function Press() {
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={ogImgURL} />
-        <meta property="og:image:width" content="2048" />
-        <meta property="og:image:height" content="1170" />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1254" />
         <meta name="author" content={frontmatter.author}></meta>
       </MetaTags>
       {isLoading ? (

@@ -34,22 +34,15 @@ section.Partner {
   }
 
   @include theme.viewport(medium) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     .partner-display {
-      grid-row: 1;
-      align-self: flex-end;
       max-width: 100%;
       max-height: 390px;
     }
 
     .partner-info {
-      grid-row: 2;
       max-width: 500px;
-      align-self: end;
-      justify-self: center;
       button {
         margin-top: 20px;
       }

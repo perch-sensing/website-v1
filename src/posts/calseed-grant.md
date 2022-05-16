@@ -17,7 +17,7 @@ Perch Sensing Inc. was among 23 other companies selected from 166 applicants to 
 
 The CalSEED concept award is a major milestone for Perch Sensing Inc. as it gives us the continued opportunity to conduct the research and development required to finalize a deployable prototype, which includes the need for expertise, licensing of domain-specific software, and certifications.
 
-## About Perch Sensing Inc.
+### About Perch Sensing Inc.
 
 Perch Sensing Inc. is an early-stage startup focused on protecting our power grids and communities. We do this with tools that improve the visibility of previously invisible infrastructure. Perch started out as a research project at Cal Poly San Luis Obispo, and has since developed into a mission driven company.
 

@@ -1,6 +1,7 @@
 import "./Team.scss";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { SocialIcon } from "react-social-icons";
+import PartnerCard from "../../../Lander/PartnerCard";
 
 import richaProfile from "../../../../assets/profiles/richa.png";
 import caitlinProfile from "../../../../assets/profiles/caitlin.png";
@@ -21,12 +22,14 @@ import taufikProfile from "../../../../assets/profiles/taufik.jpg";
 import josephProfile from "../../../../assets/profiles/joseph.jpg";
 import majidProfile from "../../../../assets/profiles/majid.jpg";
 import benProfile from "../../../../assets/profiles/ben.jpg";
-import cpcie from "../../../../assets/cpcieSquare.png";
-import iq from "../../../../assets/innovationQuest.jpeg";
-import vw from "../../../../assets/ventureWell.png";
+
+// import cpcie from "../../../../assets/cpcieSquare.png";
+// import iq from "../../../../assets/iq.png";
+// import vw from "../../../../assets/ventureWell.png";
+// import nsf from "../../../../assets/icorps.png";
 
 const inactiveTeam = [
-  { name: "Emil Erickson", image: emilProfile, role: "Electrial Eningeer" },
+  { name: "Emil Erickson", image: emilProfile, role: "Electrical Engineer" },
   { name: "Caitlin Maltbie", image: caitlinProfile, role: "Business Lead" },
   { name: "John Waidhofer", image: johnProfile, role: "Software Developer" },
   { name: "Richa Gadgil", image: richaProfile, role: "Data Scientist" },
@@ -95,36 +98,32 @@ const activeTeam = [
   },
 ];
 
-const partners = [
-  {
-    name: "VentureWell",
-    image: vw,
-    website: "https://venturewell.org/",
-  },
-  {
-    name: "Innovation Quest",
-    image: iq,
-    website: "https://cie.calpoly.edu/prepare/innovation-quest/",
-  },
-  {
-    name: "Cal Poly Accelerator Program",
-    image: cpcie,
-    website: "https://cie.calpoly.edu/launch/accelerator/",
-  },
-];
+// const partners = [
+//   {
+//     name: "VentureWell",
+//     image: vw,
+//     website: "https://venturewell.org/",
+//   },
+//   {
+//     name: "Innovation Quest",
+//     image: iq,
+//     website: "https://cie.calpoly.edu/prepare/innovation-quest/",
+//   },
+//   {
+//     name: "Cal Poly Accelerator Program",
+//     image: cpcie,
+//     website: "https://cie.calpoly.edu/launch/accelerator/",
+//   },
+//   {
+//     name: "NSF Innovation Corps",
+//     image: nsf,
+//     website: "https://www.nsf.gov/news/special_reports/i-corps/",
+//   },
+// ];
 
 export default function currentTeam() {
   return (
     <section className="Team">
-      <h2 className="sponsorHeader">Our Sponsors</h2>
-      <div className="memberArea">
-        <div className="members">
-          {partners.map((profile) => (
-            <PartnerCard {...profile} key={profile.name} />
-          ))}
-        </div>
-      </div>
-      <h2> </h2>
       <h2>Meet the Team</h2>
       <div className="memberArea">
         <div className="members">
@@ -133,6 +132,15 @@ export default function currentTeam() {
           ))}
         </div>
         <h2> </h2>
+        {/* <h2>Our Sponsors</h2>
+        <div className="memberAreaNew">
+          <div className="members">
+            {partners.map((profile) => (
+              <PartnerCard {...profile} key={profile.name} />
+            ))}
+          </div>
+        </div>
+        <h2> </h2> */}
         <h2>Thank you to our past contributors</h2>
         <div className="pastMembers">
           {inactiveTeam.map((profile) => (
@@ -184,16 +192,6 @@ function MemberCard({ name, image, role, linkedIn }) {
             <SocialIcon url={linkedIn} style={{ height: 30, width: 30 }} />
           </div>
         </div>
-      </a>
-    </div>
-  );
-}
-
-function PartnerCard({ name, image, website }) {
-  return (
-    <div className="PartnerCard">
-      <a href={website} target="_blank" rel="noreferrer">
-        <img src={image} alt={"Profile of " + name} />
       </a>
     </div>
   );

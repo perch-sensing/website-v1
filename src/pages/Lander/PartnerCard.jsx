@@ -1,9 +1,13 @@
-function PartnerCard({ name, image, website }) {
+import "./PartnerCard.scss";
+
+const PartnerCard = (props) => {
   return (
     <div className="PartnerCard">
-      <a href={website} target="_blank" rel="noreferrer">
-        <img src={image} alt={"Profile of " + name} />
+      <a href={props.website} target="_blank" rel="noreferrer">
+        <img src={props.image} alt={"Profile of " + props.name} />
       </a>
     </div>
   );
-}
+};
+
+export default PartnerCard;

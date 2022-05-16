@@ -5,14 +5,15 @@ section.Hero {
   grid-template-rows: auto min-content;
   padding-left: 0;
   padding-right: 0;
+
   .hero-info {
     z-index: 1;
     align-self: center;
     justify-self: center;
 
     @include theme.viewport(small) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
     .title {
@@ -24,10 +25,17 @@ section.Hero {
         color: theme.color(flame);
         font-style: normal;
       }
+
+      @include theme.viewport(medium) {
+        margin-left: 0;
+      }
     }
 
     .company-desc {
       text-align: center;
+      @include theme.viewport(medium) {
+        margin-left: 0;
+      }
     }
 
     .buttonText {
@@ -51,13 +59,18 @@ section.Hero {
     .editionButtons {
       display: flex;
       justify-content: space-between;
+      @include theme.viewport(small) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   }
 
   .perch-line {
-    width: 100%;
     max-height: 70%;
     min-height: 280px;
+    width: 80%;
+    max-width: 100%;
     margin: auto;
   }
 
@@ -65,6 +78,7 @@ section.Hero {
     display: flex;
     justify-content: center;
     padding-top: 5%;
+    font-size: x-large;
   }
 
   .partners {
@@ -73,43 +87,5 @@ section.Hero {
     padding-right: 100px;
     padding-left: 100px;
     justify-content: center;
-  }
-
-  .PartnerCard {
-    padding: 2%;
-    margin: 30px;
-    background: white;
-    width: min-content;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
-    transform-origin: top;
-    transition: box-shadow 0.7s, transform 0.7s;
-    border-radius: 25px;
-
-    @include theme.viewport(small) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-
-      padding: 10px;
-      h3,
-      p {
-        margin: 0%;
-      }
-    }
   }
 }

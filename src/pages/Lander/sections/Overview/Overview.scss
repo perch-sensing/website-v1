@@ -10,10 +10,12 @@ section.Overview {
   }
 
   .overview-display {
-    max-width: 45%;
     max-height: 440px;
     object-position: top center;
     object-fit: contain;
+    width: 80%;
+    max-width: 100%;
+    margin: auto;
 
     @include theme.viewport(medium) {
       max-width: 600px;

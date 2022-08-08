@@ -8,6 +8,7 @@ import iq from "../../assets/iq.png";
 import vw from "../../assets/ventureWell.png";
 import nsf from "../../assets/icorps.png";
 import PartnerCard from "../../pages/Lander/PartnerCard";
+import calseed from "../../assets/calseed_logo.png";
 
 function getImage(type) {
   if (type === "g") {
@@ -42,6 +43,11 @@ const partners = [
     image: nsf,
     website: "https://www.nsf.gov/news/special_reports/i-corps/",
   },
+  {
+    name: "CalSEED",
+    image: calseed,
+    website: "https://calseed.fund/",
+  },
 ];
 
 export default function Partner(props) {
@@ -68,7 +74,9 @@ export default function Partner(props) {
             loading="lazy"
           />
         </div>
-        <h3 className="sponsorHeader">Thank You To Our Supporters</h3>
+        <h3 className="sponsorHeader">
+          Perch Sensing Research and Development is supported by
+        </h3>
         <div className="memberArea">
           <div className="partners">
             {partners.map((profile) => (

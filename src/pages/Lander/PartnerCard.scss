@@ -15,7 +15,7 @@
   }
 
   img {
-    width: 150px;
+    width: fit-content;
     height: 150px;
     object-fit: cover;
     object-position: center;
@@ -24,7 +24,7 @@
   @include theme.viewport(medium) {
     margin: 10px;
     img {
-      width: 100px;
+      width: fit-content;
       height: 100px;
       object-fit: cover;
       object-position: center;

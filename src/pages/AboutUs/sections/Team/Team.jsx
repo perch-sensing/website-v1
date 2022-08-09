@@ -3,56 +3,37 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { SocialIcon } from "react-social-icons";
 import PartnerCard from "../../../Lander/PartnerCard";
 
-import richaProfile from "../../../../assets/profiles/richa.png";
-import caitlinProfile from "../../../../assets/profiles/caitlin.png";
 import brookeProfile from "../../../../assets/profiles/brooke.png";
-import reedProfile from "../../../../assets/profiles/reed.png";
-import emilProfile from "../../../../assets/profiles/emil.png";
-import johnProfile from "../../../../assets/profiles/john.jpeg";
 import dominicProfile from "../../../../assets/profiles/dominic.jpeg";
-import CJProfile from "../../../../assets/profiles/CJ.jpg";
-import jeniProfile from "../../../../assets/profiles/jeni.jpeg";
-import janineProfile from "../../../../assets/profiles/janine.jpeg";
-import nickProfile from "../../../../assets/profiles/nick.jpeg";
-import arthurProfile from "../../../../assets/profiles/arthur.jpeg";
-import lewisProfile from "../../../../assets/profiles/lewis.jpeg";
 import nathanProfile from "../../../../assets/profiles/nathan.jpeg";
 import mckennaProfile from "../../../../assets/profiles/mckenna.jpeg";
 import taufikProfile from "../../../../assets/profiles/taufik.jpg";
 import josephProfile from "../../../../assets/profiles/joseph.jpg";
 import majidProfile from "../../../../assets/profiles/majid.jpg";
-import benProfile from "../../../../assets/profiles/ben.jpg";
 
 // import cpcie from "../../../../assets/cpcieSquare.png";
 // import iq from "../../../../assets/iq.png";
 // import vw from "../../../../assets/ventureWell.png";
 // import nsf from "../../../../assets/icorps.png";
 
-const inactiveTeam = [
-  { name: "Emil Erickson", image: emilProfile, role: "Electrical Engineer" },
-  { name: "Caitlin Maltbie", image: caitlinProfile, role: "Business Lead" },
-  { name: "John Waidhofer", image: johnProfile, role: "Software Developer" },
-  { name: "Richa Gadgil", image: richaProfile, role: "Data Scientist" },
-  { name: "Jeni Kawate", image: jeniProfile, role: "Electrical Engineer" },
-  { name: "Janine Darato", image: janineProfile, role: "Electrical Engineer" },
-  { name: "Nick Marta", image: nickProfile, role: "Electrical Engineer" },
-  { name: "Reed Slobodin", image: reedProfile, role: "Electrical Engineer" },
-  { name: "CJ Gray", image: CJProfile, role: "Mechanical Engineer" },
-  { name: "Arthur Waidhofer", image: arthurProfile, role: "Graphic Designer" },
-];
-
 const activeTeam = [
+  {
+    name: "Brooke Randolph",
+    image: brookeProfile,
+    role: "CEO",
+    linkedIn: "https://www.linkedin.com/in/brookerandolph/",
+  },
+  {
+    name: "Nathan Wang",
+    image: nathanProfile,
+    role: "COO/CFO",
+    linkedIn: "https://www.linkedin.com/in/nathandwang/",
+  },
   {
     name: "Dominic Gaiero",
     image: dominicProfile,
-    role: "Engineering Lead",
+    role: "CTO",
     linkedIn: "https://www.linkedin.com/in/dgaiero/",
-  },
-  {
-    name: "Lewis Pietropaoli",
-    image: lewisProfile,
-    role: "Electrical Engineer",
-    linkedIn: "https://www.linkedin.com/in/lewispietropaoli/",
   },
   {
     name: "McKenna Reed",
@@ -60,24 +41,9 @@ const activeTeam = [
     role: "Software Developer",
     linkedIn: "https://www.linkedin.com/in/mreed12/",
   },
-  {
-    name: "Brooke Randolph",
-    image: brookeProfile,
-    role: "Business Lead",
-    linkedIn: "https://www.linkedin.com/in/brookerandolph/",
-  },
-  {
-    name: "Nathan Wang",
-    image: nathanProfile,
-    role: "Electrical Engineer",
-    linkedIn: "https://www.linkedin.com/in/nathandwang/",
-  },
-  {
-    name: "Benjamin Trust",
-    image: benProfile,
-    role: "Mechanical Engineer",
-    linkedIn: "https://www.linkedin.com/in/benjamin-a-trust/",
-  },
+];
+
+const advisingTeam = [
   {
     name: "Majid Poshtan",
     image: majidProfile,
@@ -98,60 +64,32 @@ const activeTeam = [
   },
 ];
 
-// const partners = [
-//   {
-//     name: "VentureWell",
-//     image: vw,
-//     website: "https://venturewell.org/",
-//   },
-//   {
-//     name: "Innovation Quest",
-//     image: iq,
-//     website: "https://cie.calpoly.edu/prepare/innovation-quest/",
-//   },
-//   {
-//     name: "Cal Poly Accelerator Program",
-//     image: cpcie,
-//     website: "https://cie.calpoly.edu/launch/accelerator/",
-//   },
-//   {
-//     name: "NSF Innovation Corps",
-//     image: nsf,
-//     website: "https://www.nsf.gov/news/special_reports/i-corps/",
-//   },
-// ];
-
 export default function currentTeam() {
   return (
-    <section className="Team">
-      <h2>Meet the Team</h2>
-      <div className="memberArea">
-        <div className="members">
-          {activeTeam.map((profile) => (
-            <MemberCard {...profile} key={profile.name} />
-          ))}
-        </div>
-        <h2> </h2>
-        {/* <h2>Our Sponsors</h2>
-        <div className="memberAreaNew">
+    <div>
+      <section className="Team">
+        <h2>Meet the Team</h2>
+        <div className="memberArea">
           <div className="members">
-            {partners.map((profile) => (
-              <PartnerCard {...profile} key={profile.name} />
+            {activeTeam.map((profile) => (
+              <MemberCard {...profile} key={profile.name} />
             ))}
           </div>
         </div>
-        <h2> </h2> */}
-        <h2>Thank you to our past contributors</h2>
-        <div className="pastMembers">
-          {inactiveTeam.map((profile) => (
-            <PastMemeber {...profile} key={profile.name} />
-          ))}
+        <h2>Advised By</h2>
+        <div className="memberArea">
+          <div className="members">
+            {advisingTeam.map((profile) => (
+              <MemberCard {...profile} key={profile.name} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
+// Currently not being used, not removing in case we want to use again later
 function PastMemeber({ name, image, role }) {
   return (
     <div className="pastMember">

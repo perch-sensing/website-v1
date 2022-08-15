@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import MetaTags from "react-meta-tags";
 import Skeleton from "react-loading-skeleton";
 import rehypeRaw from "rehype-raw";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 import { ReactComponent as PerchLogo } from "../../assets/perch-logo-currentColor.svg";
 
@@ -24,9 +25,7 @@ export default function Press() {
   } | Perch Sensing`;
   let ogImgURL = `https://og-image.services.perchsensing.com/${encodeURIComponent(
     frontmatter.title
-  )}?date=${encodeURIComponent(
-    frontmatter.pub_date
-  )}`;
+  )}?date=${encodeURIComponent(frontmatter.pub_date)}`;
   // Eventually, we'll include this, but it isn't working right now (LinkedIn is
   // chopping off most of the logo)
   // &partnerLogo=${encodeURIComponent(
@@ -68,7 +67,7 @@ export default function Press() {
   });
 
   if (error404) {
-    return <Redirect to="/404" />;
+    return <PageNotFound />;
   }
   return (
     <article className="Press">

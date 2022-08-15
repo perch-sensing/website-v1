@@ -5,14 +5,15 @@ section.Hero {
   grid-template-rows: auto min-content;
   padding-left: 0;
   padding-right: 0;
+
   .hero-info {
     z-index: 1;
     align-self: center;
     justify-self: center;
 
     @include theme.viewport(small) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
     .title {
@@ -24,10 +25,17 @@ section.Hero {
         color: theme.color(flame);
         font-style: normal;
       }
+
+      @include theme.viewport(medium) {
+        margin-left: 0;
+      }
     }
 
     .company-desc {
       text-align: center;
+      @include theme.viewport(medium) {
+        margin-left: 0;
+      }
     }
 
     .buttonText {
@@ -51,13 +59,33 @@ section.Hero {
     .editionButtons {
       display: flex;
       justify-content: space-between;
+      @include theme.viewport(small) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   }
 
   .perch-line {
-    width: 100%;
     max-height: 70%;
     min-height: 280px;
+    width: 80%;
+    max-width: 100%;
     margin: auto;
+  }
+
+  .sponsorHeader {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    font-size: x-large;
+  }
+
+  .partners {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 100px;
+    padding-left: 100px;
+    justify-content: center;
   }
 }

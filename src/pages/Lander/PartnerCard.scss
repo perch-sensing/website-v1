@@ -1,0 +1,44 @@
+@use "../../styles/utils" as theme;
+
+.PartnerCard {
+  padding: 1%;
+  margin: 30px;
+  background: white;
+  width: min-content;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.212);
+  transform-origin: top;
+  transition: box-shadow 0.7s, transform 0.7s;
+  border-radius: 15%;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: fit-content;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @include theme.viewport(medium) {
+    margin: 10px;
+    img {
+      width: fit-content;
+      height: 100px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    h3,
+    p {
+      margin: 0%;
+    }
+  }
+}

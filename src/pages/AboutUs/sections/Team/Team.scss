@@ -9,13 +9,18 @@
 
     .memberArea {
       width: 85%;
-      //width: 60em;
     }
+
+    .memberAreaNew {
+      width: 100%;
+      width: 60em;
+    }
+
     .members {
       display: flex;
       flex-wrap: wrap;
-      padding-right: 100px;
-      padding-left: 100px;
+      padding-right: 80px;
+      padding-left: 80px;
     }
 
     .pastMembers {

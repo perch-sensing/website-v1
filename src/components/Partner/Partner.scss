@@ -1,10 +1,14 @@
 @use "../../styles/utils.scss" as theme;
 
 section.Partner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
+  .partnerCore {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 0%;
+  }
+
   .partner-info {
     justify-self: flex-end;
   }
@@ -13,26 +17,51 @@ section.Partner {
     height: 500px;
   }
 
+  .sponsorHeader {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    padding-top: 0%;
+  }
+
+  .partners {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 100px;
+    padding-left: 100px;
+    justify-content: center;
+  }
+
   @include theme.viewport(medium) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-items: center;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     .partner-display {
-      grid-row: 1;
-      align-self: flex-end;
       max-width: 100%;
       max-height: 390px;
     }
 
     .partner-info {
-      grid-row: 2;
       max-width: 500px;
-      align-self: end;
-      justify-self: center;
       button {
         margin-top: 20px;
       }
+    }
+
+    .sponsorHeader {
+      display: flex;
+      justify-content: center;
+      font-size: x-large;
+      padding-top: 0%;
+    }
+
+    .partners {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-right: 50px;
+      padding-left: 50px;
+      justify-content: center;
     }
   }
 }

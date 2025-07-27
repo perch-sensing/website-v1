@@ -1,4 +1,6 @@
-# Perch Website
+# Perch V1 Website
+
+[![Open in Coder](https://raw.githubusercontent.com/coder/coder/00fcf36999dd87346b48545512686a29d92eef7b/site/static/open-in-coder.svg)](https://coder.perchsensing.com/templates/nodejs/workspace?mode=auto&param.Dotfiles=&param.Git+repository=https%3A%2F%2Fgithub.com%2Fperch-sensing%2Fwebsite-v1.git&param.Node+Version=21.7.3&param.Recurse+Submodules=false)
 
 The marketing homepage for Perch Sensing, presenting the company mission to the world.
 
